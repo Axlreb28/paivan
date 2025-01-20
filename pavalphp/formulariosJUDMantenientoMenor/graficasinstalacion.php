@@ -114,6 +114,7 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mapa y Gráfica Filtrables</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         #map { height: 600px; width: 100%; }
@@ -121,7 +122,7 @@ $conn->close();
     </style>
 </head>
 <body>
-    <h1>Mapa Interactivo y Gráfica de Actividades</h1>
+    <h1 class="titulo-mapa">Mapa Interactivo y Gráfica de Actividades</h1>
 
     <!-- Filtros -->
     <form method="GET" action="">
@@ -238,5 +239,7 @@ $conn->close();
         }
     });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

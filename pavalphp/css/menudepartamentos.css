@@ -1,23 +1,11 @@
-/* Estilo para el navbar */
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000; /* Asegura que el navbar esté encima de otros elementos */
-    background-color: #333; /* Color de fondo del navbar */
-    padding: 10px 0; /* Ajusta el padding según sea necesario */
-}
-
-/* Ajustes en el contenido principal */
+/* Estilo general para el contenedor principal */
 #formContent {
-    padding-top: 60px; /* Ajuste de padding-top para compensar la altura del navbar */
     padding: 40px;
     text-align: center;
     width: 100%;
     max-width: 800px;
     min-height: 500px;
-    display: flex;
+    display: block;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -25,10 +13,13 @@
     background-color: #f9f9f9; /* Fondo claro */
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    position: relative; /* Cambio a posición relativa */
-    margin-top: 20px; /* Ajuste de margen superior */
+    position: absolute; /* Posición absoluta */
+    top: 50%; /* Posiciona el contenedor a la mitad de la altura */
+    left: 50%; /* Posiciona el contenedor a la mitad del ancho */
+    transform: translate(-50%, -50%); /* Centra el contenedor */
 }
 
+body { background-color: #bf3131; /* Fondo rojo */}
 /* Estilo para el título */
 #formContent h2.centro {
     font-size: 40px;
@@ -50,7 +41,7 @@
     display: block;
     padding: 15px;
     text-align: center;
-    background-color: #bf3131; /* Fondo rojizo */
+    background-color: #bf3131; 
     color: white;
     text-decoration: none; /* Sin subrayado */
     border-radius: 4px;
@@ -59,7 +50,7 @@
 }
 
 .menu-item:hover {
-    background-color: #ffb093; /* Fondo más claro al pasar el ratón */
+    background-color: #ffb093; /* Fondo azul oscuro al pasar el ratón */
     color: white;
 }
 

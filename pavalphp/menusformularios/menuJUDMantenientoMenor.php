@@ -21,7 +21,7 @@ $_SESSION['departamento'] = 'NombreDelDepartamento';
 
         <h2 class="centro"> Programas sociales</h2>
         <div class="menu-grid">
-            <a class="menu-item" href="../formulariosJUDMantenientoMenor/form.php">JUD de Manteniento Menor</a>
+            <a class="menu-item" href="../formulariosJUDMantenientoMenor/form.php">JUD de Mantenimiento Menor</a>
         </div>
     </div>
 

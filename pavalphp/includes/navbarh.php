@@ -1,5 +1,11 @@
-<?php session_start(); ?>
-<?php session_start(); ?>
+<?php
+session_start();
+if (!isset($_SESSION['nombre_usuario'])) {
+    // Si no hay una sesión iniciada, redirigir al usuario al login
+    header("Location: login.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -12,9 +18,9 @@
 <body>
     <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand">
             <img src="static/img/logo.png" alt="Logo" style="height: 30px;">
-        </a>    
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>

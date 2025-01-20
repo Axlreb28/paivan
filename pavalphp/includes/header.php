@@ -1,5 +1,5 @@
 <?php session_start(); ?>
-<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -31,7 +31,7 @@
                         <a class="nav-link">Hola, ' . htmlspecialchars($_SESSION['nombre_usuario'], ENT_QUOTES, 'UTF-8') . '</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="logout.php">
+                        <a class="nav-link" href="../logout.php">
                             <i class="fas fa-sign-out-alt"></i>
                         </a>
                     </li>';

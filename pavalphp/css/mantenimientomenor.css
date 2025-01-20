@@ -16,7 +16,7 @@
     background-color: #c24040;
     overflow: hidden; /* Evita que los elementos desborden el contenedor */
 }
- 
+
 .container form {
     width: 100%;
     max-width: 600px; /* Ajusta el valor máximo */
@@ -117,4 +117,12 @@ form .btn:hover {
     margin-top: 10px;
     border-radius: 6px; /* Añadir borde redondeado */
     overflow: hidden; /* Para evitar desbordamientos */
+}
+
+
+.titulo-mapa {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
 }
