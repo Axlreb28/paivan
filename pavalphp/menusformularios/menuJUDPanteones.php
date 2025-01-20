@@ -14,7 +14,7 @@ $_SESSION['departamento'] = 'NombreDelDepartamento';
 </head>
 
 <body>
-    <?php include '../includes/navbarh.php'; ?>
+    <?php include '../includes/header.php'; ?>
     
     <div id="formContent">
 

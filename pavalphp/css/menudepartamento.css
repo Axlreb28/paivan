@@ -1,3 +1,14 @@
+/* Estilo para el navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Asegura que el navbar esté encima de otros elementos */
+    background-color: #333; /* Color de fondo del navbar */
+    padding: 10px 0; /* Ajusta el padding según sea necesario */
+}
+
 /* Estilo general para el contenedor principal */
 #formContent {
     padding: 40px;

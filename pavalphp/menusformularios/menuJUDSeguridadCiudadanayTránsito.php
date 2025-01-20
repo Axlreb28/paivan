@@ -13,11 +13,11 @@ $_SESSION['departamento'] = 'NombreDelDepartamento';
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> 
     <link rel="stylesheet" href="../css/menudepartamento.css"> 
     <link rel="stylesheet" href="../css/trubros.css"> 
-    <?php include '../includes/navbarh.php'; ?>
+    
 </head>
 
 <body>
-    
+    <?php include '../includes/header.php'; ?>
     <div id="formContent">
 
         <h2 class="centro"> Programas sociales</h2>

@@ -2,6 +2,7 @@
 session_start();
 $error = '';
 
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -16,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         $stmt = $conn->prepare("
-            SELECT u.ID AS UsuarioID, u.Contraseña 
+            SELECT u.ID AS UsuarioID, u.Contraseña, u.Nombre 
             FROM RegistroUsuarios u
             WHERE u.Email = ?
         ");
@@ -30,10 +31,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $row = $result->fetch_assoc();
             $usuario_id = $row['UsuarioID'];
             $hashed_password = $row['Contraseña'];
+            $nombre_usuario = $row['Nombre'];
 
             if (password_verify($password, $hashed_password)) {
                 $_SESSION['usuario'] = $email;
                 $_SESSION['usuario_id'] = $usuario_id;
+                $_SESSION['nombre_usuario'] = $nombre_usuario; // Almacenar el nombre del usuario en la sesión
 
                 header("Location: menudepartamento.php");
                 exit();
@@ -47,6 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="es">

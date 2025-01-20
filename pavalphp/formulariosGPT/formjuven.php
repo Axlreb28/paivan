@@ -10,6 +10,16 @@ session_start();
     <link rel="stylesheet" href="../css/formulario.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> <!-- Font Awesome -->
+    <style>
+        .back-icon {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            font-size: 24px;
+        }
+    </style>
     <script>
         let map;
         let marker;
@@ -71,6 +81,9 @@ session_start();
 <body>
 <?php if (isset($_SESSION['departamento'])): ?>
     <div class="container">
+        <a href="javascript:history.back()" class="back-icon">
+            <i class="fas fa-arrow-left"></i> <!-- Ícono de Font Awesome -->
+        </a>
         <form class="miFormulario" action="">
             <div class="row">
                 <div class="column">
