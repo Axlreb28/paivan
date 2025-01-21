@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Jan 21, 2025 at 03:27 PM
--- Server version: 10.3.39-MariaDB-0+deb10u2
--- PHP Version: 8.3.14
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 21-01-2025 a las 17:40:23
+-- Versión del servidor: 10.4.27-MariaDB
+-- Versión de PHP: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `tlalpandb`
+-- Base de datos: `tlalpan`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `apoyo_para_el_bienestar_2025`
+-- Estructura de tabla para la tabla `apoyo_para_el_bienestar_2025`
 --
 
 CREATE TABLE `apoyo_para_el_bienestar_2025` (
@@ -52,7 +52,203 @@ CREATE TABLE `apoyo_para_el_bienestar_2025` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `construyendo_salud_en_comunidad`
+-- Estructura de tabla para la tabla `colonias`
+--
+
+CREATE TABLE `colonias` (
+  `ID` int(11) NOT NULL,
+  `Nombre` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `colonias`
+--
+
+INSERT INTO `colonias` (`ID`, `Nombre`) VALUES
+(1, 'MESA LOS HORNOS'),
+(2, 'TEXCALTENCO'),
+(3, 'MIRADOR 1A SECC'),
+(4, 'LA PRIMAVERA'),
+(5, 'LOMAS ALTAS DE PADIERNA SUR'),
+(6, 'LOMAS DE PADIERNA (AMPL)'),
+(7, 'SAN PEDRO MARTIR (PBLO)'),
+(8, 'TLALCOLIGIA'),
+(9, 'SAUZALES CEBADALES (U HAB)'),
+(10, 'SAN ANDRES TOTOLTEPEC (PBLO)'),
+(11, 'SAN MIGUEL XICALCO (PBLO)'),
+(12, 'LOMAS DE PADIERNA II'),
+(13, 'XAXALCO'),
+(14, 'ISIDRO FABELA II (ORIENTE)'),
+(15, 'JARDINES EN LA MONTAA'),
+(16, 'JARDINES DEL AJUSCO'),
+(17, 'AYOCATITLA, ASUNCIN'),
+(18, 'ARBOLEDAS DEL SUR'),
+(19, 'UNIDADES HABITACIONALES DE TENORIOS'),
+(20, 'DOLORES TLALI'),
+(21, 'EL ZACATON'),
+(22, 'HUESO PERIFERICO-ISSSFAM NO. 7 (U HABS)'),
+(23, 'SAN MIGUEL TOPILEJO (PBLO)'),
+(24, 'TORIELLO GUERRA'),
+(25, 'VIVEROS DE COACTETLAN'),
+(26, 'PEDREGAL DE SN NICOLAS 4A SECC I'),
+(27, 'LOMAS DE TEPEMECATL'),
+(28, 'LA PALMA'),
+(29, 'MOVIMIENTO ORGANIZADO DE TLALPAN-EL MIRADOR (RNCDA)'),
+(30, 'LA LONJA'),
+(31, 'LOMAS HIDALGO'),
+(32, 'LA TORTUGA XOLALPA-HCO COLEGIO MILITAR'),
+(33, 'JARDINES DE SAN JUAN'),
+(34, 'FUENTES Y PEDREGAL DE TEPEPAN'),
+(35, 'HEROES DE 1910'),
+(36, 'PARQUES DEL PEDREGAL'),
+(37, 'PARAJE 38'),
+(38, 'EL ARENAL'),
+(39, 'CRUZ DEL FAROL'),
+(40, 'BOSQUE DE TEPEXIMILPA'),
+(41, 'TEZONTITLA'),
+(42, 'VALLE DE TEPEPAN'),
+(43, 'VISTAS DEL PEDREGAL'),
+(44, 'TEPETONGO'),
+(45, 'CONDOMINIO DEL BOSQUE (FRACC)-BOSQUE DE TLALPAN'),
+(46, 'ISIDRO FABELA I (PONIENTE)'),
+(47, 'LOS ENCINOS'),
+(48, 'TEPETLICA EL ALTO-3 DE MAYO'),
+(49, 'PIEDRA LARGA'),
+(50, 'PROGRESO TLALPAN'),
+(51, 'HEROES DE PADIERNA II'),
+(52, 'PEDREGAL DE SN NICOLAS 4A SECC II'),
+(53, 'CONJUNTO HABITACIONAL PEDREGAL DEL LAGO'),
+(54, 'BELVEDERE'),
+(55, 'PEDREGAL DE SN NICOLAS 1A SECC'),
+(56, 'PEDREGAL DE SN NICOLAS 3A SECC'),
+(57, 'RINCON LAS HADAS-VILLA ROYALE-FUENTES Y ARCONADA COAPA'),
+(58, 'FUENTES DEL PEDREGAL'),
+(59, 'AMPLIACION MIGUEL HIDALGO 4A SECC'),
+(60, 'GRANJAS COAPA'),
+(61, 'BOSQUES DEL PEDREGAL'),
+(62, 'ARENAL GUADALUPE TLALPAN'),
+(63, 'SANTO TOMAS AJUSCO (PBLO)'),
+(64, 'LOMAS DE PADIERNA I'),
+(65, '2 DE OCTUBRE'),
+(66, 'LA MAGDALENA PETLACALCO (PBLO)'),
+(67, 'JUVENTUD UNIDA'),
+(68, 'TLALPAN CENTRO'),
+(69, 'TLALMILLE'),
+(70, 'VERGEL DE COYOACAN-VERGEL DEL SUR'),
+(71, 'VILLA LAZARO CARDENAS'),
+(72, 'VERANO'),
+(73, 'REAL DEL SUR-VILLAS DEL SUR-RESIDENCIAL ACOXPA'),
+(74, 'RINCONADA (U HAB)'),
+(75, 'AMSA'),
+(76, 'FUENTES BROTANTES MIGUEL HIDALGO (U HAB)'),
+(77, 'ARENAL PUERTA TEPEPAN'),
+(78, 'AMPLIACION MIGUEL HIDALGO 3A SECC'),
+(79, 'CALVARIO CAMISETAS'),
+(80, 'HACIENDA SAN JUAN-RINCON DE SAN JUAN-CHIMALI'),
+(81, 'COAPA 2A SECCION-RAMOS MILLAN'),
+(82, 'SANTA URSULA XITLA'),
+(83, 'PARRES EL GUARDA (PBLO)'),
+(84, 'PRADO COAPA 3A SECCION-POTRERO ACOXPA'),
+(85, 'PEDREGAL DE LAS AGUILAS'),
+(86, 'ROCA DE CRISTAL'),
+(87, 'VILLA DEL PUENTE FOVISSSTE (U HAB)'),
+(88, 'NARCISO MENDOZA-VILLA COAPA SUPER MANZANA 6 (U HAB)'),
+(89, 'LA JOYA'),
+(90, 'LOS PASTORES'),
+(91, 'IGNACIO CHAVEZ (U HAB)'),
+(92, 'LOMAS DE TEXCALATLACO'),
+(93, 'FLORESTA-PRADO-VERGEL COAPA'),
+(94, 'EMILIO PORTES GIL PEMEX PICACHO (U HAB)'),
+(95, 'FRESNO'),
+(96, 'SAN MIGUEL TEHUISCO-LOS ANGELES-AYOMETITLA'),
+(97, 'NARCISO MENDOZA-VILLA COAPA SUPER MANZANA 7 (U HAB)'),
+(98, 'SAN BARTOLO EL CHICO'),
+(99, 'PUEBLO QUIETO'),
+(100, 'AMPLIACION MIGUEL HIDALGO 2A SECC'),
+(101, 'CHICHICASPATL'),
+(102, 'AHUACATITLA'),
+(103, 'CHIMILLI'),
+(104, 'CUILOTEPEC II'),
+(105, 'XAXALIPAC'),
+(106, 'SAN PEDRO APOSTOL (BARR)'),
+(107, 'VILLA COAPA (RDCIAL)'),
+(108, 'COLINAS DEL BOSQUE-LAS TORTOLAS'),
+(109, 'LA FAMA'),
+(110, 'EJIDOS DE SAN PEDRO MARTIR I (NORTE)'),
+(111, 'PEDREGAL DE STA URSULA XITLA'),
+(112, 'RANCHO LOS COLORINES (FRACC)'),
+(113, 'VALLE ESCONDIDO'),
+(114, 'TETENCO (PJE)'),
+(115, 'CHIMALCOYOC'),
+(116, 'MIGUEL HIDALGO'),
+(117, 'ORIENTE (AMPL)'),
+(118, 'SAN LORENZO HUIPULCO'),
+(119, 'LA MAGUEYERA'),
+(120, 'TORRES DE PADIERNA'),
+(121, 'BELISARIO DOMINGUEZ'),
+(122, 'EJIDOS DE SAN PEDRO MARTIR II (SUR)'),
+(123, 'MA ESTHER ZUNO DE ECHEVERRIA-TLALPUENTE'),
+(124, 'LA LIBERTAD - IXTLAHUACA'),
+(125, 'COAPA-VILLA CUEMANCO'),
+(126, 'TEZONTITLA - EL CALVARIO (AMPL)'),
+(127, 'TENORIOS INFONAVIT 1 Y 2 (U HAB)'),
+(128, 'PLAN DE AYALA'),
+(129, 'MIRADOR 2A y 3A SECC'),
+(130, 'POPULAR STA TERESA'),
+(131, 'NUEVA ORIENTAL COAPA-EX HACIENDA COAPA'),
+(132, 'MIRADOR II'),
+(133, 'NIO JESUS (BARR)'),
+(134, 'ZAPOTE-LUIS DONALDO COLOSIO (U HABS)'),
+(135, 'SAN MIGUEL TOXIAC'),
+(136, 'JARDINES COAPA-BELISARIO DOMINGUEZ'),
+(137, 'CONJUNTO URBANO CUEMANCO (U HAB)'),
+(138, 'EL DIVISADERO'),
+(139, 'EX HACIENDA SAN JUAN DE DIOS'),
+(140, 'GRANJAS COAPA ORIENTE'),
+(141, 'OCOTLA - OCOTLA CHICO'),
+(142, 'TECORRAL'),
+(143, 'SANTISIMA TRINIDAD'),
+(144, 'VALLE VERDE'),
+(145, 'LOMA BONITA-AMPLIACION TEPEXIMILPA'),
+(146, 'NARCISO MENDOZA-VILLA COAPA SUPER MANZANA 1 (U HAB)'),
+(147, 'LOMAS DEL PEDREGAL'),
+(148, 'NARCISO MENDOZA VILLA COAPA SUPERMANZANA 8 (U HAB)'),
+(149, 'ISIDRO FABELA (AMPL)'),
+(150, 'MIRADOR DEL VALLE'),
+(151, 'SAN MIGUEL AJUSCO (PBLO)'),
+(152, 'MIRADOR I'),
+(153, 'RESIDENCIAL INSURGENTES SUR (U HAB)'),
+(154, 'SN JUAN TEPEXIMILPA (AMPL)'),
+(155, 'CULTURA MAYA'),
+(156, 'HEROES DE PADIERNA I'),
+(157, 'VILLA OLIMPICA LIBERADOR MIGUEL HIDALGO (U HAB)'),
+(158, 'SECCION XVI'),
+(159, 'CLUB DE GOLF MEXICO-SAN BUENAVENTURA'),
+(160, 'ISSSFAM No. 1 (U HAB)-VILLA TLALPAN'),
+(161, 'CUCHILLA DE PADIERNA'),
+(162, 'LOMAS DE CUILOTEPEC'),
+(163, 'NARCISO MENDOZA-VILLA COAPA SUPER MANZANA 2 (U HAB)'),
+(164, 'NARCISO MENDOZA-VILLA COAPA SUPER MANZANA 3 (U HAB)'),
+(165, 'PEDREGAL DE SN NICOLAS 2A SECC'),
+(166, 'ROMULO SANCHEZ-SAN FERNANDO (BARR)-PEA POBRE'),
+(167, 'SN JUAN TEPEXIMILPA'),
+(168, 'ZACATIENDA'),
+(169, 'TRES FUENTES (U HAB)'),
+(170, 'LOS VOLCANES'),
+(171, 'NUEVO RENACIMIENTO DE AXALCO'),
+(172, 'LA GUADALUPANA'),
+(173, 'PRADO COAPA 2A SECCION'),
+(174, 'ATOCPA SUR'),
+(175, 'CANTERA PUENTE DE PIEDRA'),
+(176, 'DIAMANTE'),
+(177, 'FOVISSSTE SAN PEDRO MARTIR ( U HAB)'),
+(178, 'SAN NICOLAS II'),
+(179, 'SOLIDARIDAD');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `construyendo_salud_en_comunidad`
 --
 
 CREATE TABLE `construyendo_salud_en_comunidad` (
@@ -76,7 +272,7 @@ CREATE TABLE `construyendo_salud_en_comunidad` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cuidar_y_ser_cuidado_para_el_bienestar_2025`
+-- Estructura de tabla para la tabla `cuidar_y_ser_cuidado_para_el_bienestar_2025`
 --
 
 CREATE TABLE `cuidar_y_ser_cuidado_para_el_bienestar_2025` (
@@ -101,10 +297,62 @@ CREATE TABLE `cuidar_y_ser_cuidado_para_el_bienestar_2025` (
   `FechaRegistro` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `cuidar_y_ser_cuidado_para_el_bienestar_2025`
+--
+
+INSERT INTO `cuidar_y_ser_cuidado_para_el_bienestar_2025` (`ID`, `UsuarioID`, `DepartamentoID`, `FormularioID`, `DimensionPrograma`, `Actividad`, `Observacion`, `Colectivo`, `Acti`, `NombreBeneficiario`, `ApellidoPaterno`, `ApellidoMaterno`, `Sexo`, `Telefono`, `FechaNacimiento`, `Colonia`, `Ubicacion`, `Direccion`, `FechaRegistro`) VALUES
+(21, 2, 3, 1, 'Beneficiario Directo', 'Colectivos', 'Sin observaciones', 'Grupos', 'Evento', 'Juan', 'Perez', 'Lopez', 'hombre', '9214589637', '2024-07-15', 'Cancún', '200 150', 'Av. Reforma 234, Lt 8, Cs 12', '2025-01-19 02:43:58'),
+(22, 4, 2, 2, 'Beneficiario Directo', 'Colectivos', 'Nota importante', 'Comunidades', 'Taller', 'Ana', 'Martinez', 'Gomez', 'mujer', '8179456312', '2025-03-10', 'Playa del Carmen', '150 175', 'Calle 12 Sur, Mz 45, Lt 7, Cs 9', '2025-01-19 02:43:58'),
+(23, 5, 1, 3, 'Beneficiario Directo', 'Facilitadores', 'Sin datos', 'Asociaciones', 'Capacitación', 'Carlos', 'Sanchez', 'Torres', 'hombre', '7729658432', '2026-01-22', 'Mérida', '180 130', 'Sm 5, Mz 11, Lt 3, Cs 6', '2025-01-19 02:43:58'),
+(24, 6, 7, 1, 'Beneficiario Directo', 'Facilitadores', 'Sin comentarios', 'Grupos', 'Curso', 'María', 'Hernandez', 'Luna', 'mujer', '6628471930', '2024-11-09', 'Tulum', '190 160', 'Km 25 Carretera Federal, Lt 4, Cs 10', '2025-01-19 02:43:58'),
+(25, 3, 8, 2, 'Beneficiario Directo', 'Colectivos', 'Observaciones relevantes', 'Colectivos', 'Conferencia', 'Sofia', 'Morales', 'Ruiz', 'mujer', '9826374510', '2025-05-18', 'Puerto Morelos', '125 140', 'Calle Central, Mz 22, Lt 1, Cs 3', '2025-01-19 02:43:58'),
+(26, 7, 6, 3, 'Beneficiario Directo', 'Colectivos', 'Detalles adicionales', 'Grupos', 'Actividad Cultural', 'Luis', 'Vega', 'Diaz', 'hombre', '8295613740', '2023-09-30', 'Isla Mujeres', '160 170', 'Zona Hotelera, Lt 20, Cs 5', '2025-01-19 02:43:58'),
+(27, 1, 4, 1, 'Beneficiario Directo', 'Facilitadores', 'Notas', 'Asociaciones', 'Seminario', 'Gabriela', 'Cruz', 'Castillo', 'mujer', '9174528936', '2025-02-12', 'Cozumel', '185 150', 'Plaza Principal, Mz 3, Lt 2, Cs 7', '2025-01-19 02:43:58'),
+(28, 6, 9, 2, 'Beneficiario Directo', 'Colectivos', 'Sin información', 'Comunidades', 'Charla', 'Fernando', 'Garcia', 'Fernandez', 'hombre', '8329674512', '2024-06-01', 'Valladolid', '140 155', 'Sm 21, Mz 15, Lt 9, Cs 8', '2025-01-19 02:43:58'),
+(29, 4, 10, 3, 'Beneficiario Directo', 'Facilitadores', 'Detalles pendientes', 'Grupos', 'Convivencia', 'Andrea', 'Jimenez', 'Mendoza', 'mujer', '9657823410', '2026-08-25', 'Holbox', '200 185', 'Zona Norte, Mz 12, Lt 10, Cs 15', '2025-01-19 02:43:58'),
+(30, 4, 1, 1, 'Beneficiario Directo', 'Facilitadores', 'Observaciones', 'Colectivos', 'Actividad', 'Francisco', 'Hidalgo', 'Alvarado', 'hombre', '9984557819', '2025-12-17', 'Bonfil', '175 125', 'Sm 56 Mz 75, Lt 12, Cs 04', '2025-01-19 02:43:58'),
+(31, 1, 2, 3, 'Facilitadores', 'Facilitadores', 'Detalles específicos', 'Asociaciones', 'Entrenamiento', 'Oscar', 'Núñez', 'Mora', 'hombre', '8347215489', '2025-04-14', 'Chetumal', '190 145', 'Calle 8, Mz 18, Lt 4, Cs 2', '2025-01-19 02:50:15'),
+(32, 2, 5, 2, 'Facilitadores', 'Colectivos', 'Notas adicionales', 'Comunidades', 'Capacitación', 'Laura', 'Ríos', 'Cervantes', 'mujer', '9876543210', '2026-03-20', 'Bacalar', '175 165', 'Sm 25, Mz 9, Lt 6, Cs 8', '2025-01-19 02:50:15'),
+(33, 3, 4, 1, 'Facilitadores', 'Facilitadores', 'Revisión pendiente', 'Colectivos', 'Seminario', 'Diego', 'Álvarez', 'Ramírez', 'hombre', '9812654738', '2024-09-03', 'Felipe Carrillo Puerto', '180 155', 'Km 10, Carretera Libre, Lt 2, Cs 1', '2025-01-19 02:50:15'),
+(34, 4, 8, 3, 'Facilitadores', 'Colectivos', 'Observaciones menores', 'Grupos', 'Foro', 'Daniela', 'Reyes', 'Aguilar', 'mujer', '8529637410', '2025-11-19', 'Cancún', '140 180', 'Zona Urbana, Mz 12, Lt 9, Cs 7', '2025-01-19 02:50:15'),
+(35, 5, 6, 2, 'Facilitadores', 'Facilitadores', 'Detalles en proceso', 'Asociaciones', 'Taller de Innovación', 'Roberto', 'López', 'Pérez', 'hombre', '9428572310', '2024-12-27', 'Puerto Morelos', '190 135', 'Calle Sur, Mz 5, Lt 3, Cs 4', '2025-01-19 02:50:15'),
+(36, 6, 3, 1, 'Facilitadores', 'Facilitadores', 'Datos preliminares', 'Comunidades', 'Charla Educativa', 'Camila', 'Martínez', 'Hernández', 'mujer', '9184763215', '2025-06-10', 'Playa del Carmen', '155 170', 'Calle Norte, Mz 21, Lt 1, Cs 10', '2025-01-19 02:50:15'),
+(37, 7, 7, 3, 'Facilitadores', 'Colectivos', 'Pendiente revisión', 'Grupos', 'Mesa Redonda', 'Mario', 'Ortiz', 'Sánchez', 'hombre', '8913456721', '2026-01-05', 'Tulum', '165 150', 'Km 22, Carretera Federal, Lt 5, Cs 6', '2025-01-19 02:50:15'),
+(38, 5, 1, 2, 'Facilitadores', 'Facilitadores', 'Actualización requerida', 'Colectivos', 'Encuentro Cultural', 'Sofia', 'Castañeda', 'González', 'mujer', '9012376548', '2024-08-30', 'Cozumel', '135 160', 'Zona Centro, Mz 10, Lt 2, Cs 3', '2025-01-19 02:50:15'),
+(39, 3, 9, 1, 'Facilitadores', 'Colectivos', 'Detalles relevantes', 'Asociaciones', 'Jornada Social', 'Luis', 'Fernández', 'Díaz', 'hombre', '8192837465', '2025-10-17', 'Isla Mujeres', '150 200', 'Av. Principal, Mz 8, Lt 7, Cs 12', '2025-01-19 02:50:15'),
+(40, 1, 3, 2, 'Beneficiario Directo', 'Facilitadores', 'Información pendiente', 'Grupos', 'Taller Creativo', 'Pedro', 'Ramírez', 'Domínguez', 'hombre', '8273946158', '2025-03-22', 'Cancún', '190 140', 'Av. Jardines, Mz 15, Lt 10, Cs 4', '2025-01-19 02:53:51'),
+(41, 1, 4, 1, 'Participante', 'Colaboradores', 'Sin observaciones', 'Comunidades', 'Jornada Cultural', 'Lucía', 'Pérez', 'Mejía', 'mujer', '9148327654', '2024-12-11', 'Playa del Carmen', '160 175', 'Sm 23, Mz 18, Lt 5, Cs 7', '2025-01-19 02:53:51'),
+(42, 2, 7, 3, 'Beneficiario Indirecto', 'Voluntarios', 'Notas adicionales', 'Asociaciones', 'Charla Técnica', 'Miguel', 'González', 'Castro', 'hombre', '8394756123', '2026-07-15', 'Tulum', '150 190', 'Calle Luna, Mz 8, Lt 2, Cs 10', '2025-01-19 02:53:51'),
+(43, 3, 5, 2, 'Beneficiario Directo', 'Coordinadores', 'Revisión en curso', 'Colectivos', 'Mesa Redonda', 'Elena', 'Martínez', 'Ruiz', 'mujer', '9238475610', '2025-11-30', 'Chetumal', '180 165', 'Av. Coral, Mz 12, Lt 7, Cs 3', '2025-01-19 02:53:51'),
+(44, 4, 6, 1, 'Participante', 'Líderes', 'Observaciones relevantes', 'Grupos', 'Encuentro Académico', 'Jorge', 'López', 'Cervantes', 'hombre', '8971326540', '2024-05-19', 'Puerto Morelos', '175 135', 'Sm 7, Mz 20, Lt 4, Cs 6', '2025-01-19 02:53:51'),
+(45, 5, 2, 3, 'Beneficiario Indirecto', 'Facilitadores', 'Detalles técnicos', 'Asociaciones', 'Foro Educativo', 'Mariana', 'Hernández', 'Velázquez', 'mujer', '9123847651', '2026-02-28', 'Cozumel', '165 180', 'Km 15 Carretera Federal, Lt 3, Cs 1', '2025-01-19 02:53:51'),
+(46, 6, 5, 2, 'Participante', 'Colaboradores', 'Sin detalles', 'Comunidades', 'Capacitación Técnica', 'Fernando', 'Ortiz', 'Gómez', 'hombre', '8745639201', '2025-06-21', 'Isla Mujeres', '140 155', 'Zona Hotelera, Mz 9, Lt 11, Cs 5', '2025-01-19 02:53:51'),
+(47, 7, 1, 1, 'Beneficiario Directo', 'Voluntarios', 'Notas importantes', 'Colectivos', 'Evento Cultural', 'Andrea', 'Castillo', 'Rojas', 'mujer', '9012837465', '2024-09-10', 'Holbox', '200 125', 'Av. Norte, Mz 11, Lt 6, Cs 8', '2025-01-19 02:53:51'),
+(48, 2, 6, 3, 'Beneficiario Indirecto', 'Coordinadores', 'Revisión pendiente', 'Grupos', 'Charla Informativa', 'Santiago', 'Jiménez', 'Mendoza', 'hombre', '9238456712', '2025-12-02', 'Valladolid', '150 145', 'Calle Sur, Mz 22, Lt 9, Cs 12', '2025-01-19 02:53:51'),
+(49, 1, 3, 2, 'Colectivos', 'Facilitadores', 'Información pendiente', 'Grupos', 'Taller Creativo', 'Pedro', 'Ramírez', 'Domínguez', 'hombre', '8273946158', '2025-03-22', 'Cancún', '190 140', 'Av. Jardines, Mz 15, Lt 10, Cs 4', '2025-01-19 02:55:50'),
+(50, 1, 4, 1, 'Colectivos', 'Colaboradores', 'Sin observaciones', 'Comunidades', 'Jornada Cultural', 'Lucía', 'Pérez', 'Mejía', 'mujer', '9148327654', '2024-12-11', 'Playa del Carmen', '160 175', 'Sm 23, Mz 18, Lt 5, Cs 7', '2025-01-19 02:55:50'),
+(51, 2, 7, 3, 'Colectivos', 'Voluntarios', 'Notas adicionales', 'Asociaciones', 'Charla Técnica', 'Miguel', 'González', 'Castro', 'hombre', '8394756123', '2026-07-15', 'Tulum', '150 190', 'Calle Luna, Mz 8, Lt 2, Cs 10', '2025-01-19 02:55:50'),
+(52, 3, 5, 2, 'Colectivos', 'Coordinadores', 'Revisión en curso', 'Colectivos', 'Mesa Redonda', 'Elena', 'Martínez', 'Ruiz', 'mujer', '9238475610', '2025-11-30', 'Chetumal', '180 165', 'Av. Coral, Mz 12, Lt 7, Cs 3', '2025-01-19 02:55:50'),
+(53, 4, 6, 1, 'Colectivos', 'Líderes', 'Observaciones relevantes', 'Grupos', 'Encuentro Académico', 'Jorge', 'López', 'Cervantes', 'hombre', '8971326540', '2024-05-19', 'Puerto Morelos', '175 135', 'Sm 7, Mz 20, Lt 4, Cs 6', '2025-01-19 02:55:50'),
+(54, 5, 2, 3, 'Colectivos', 'Facilitadores', 'Detalles técnicos', 'Asociaciones', 'Foro Educativo', 'Mariana', 'Hernández', 'Velázquez', 'mujer', '9123847651', '2026-02-28', 'Cozumel', '165 180', 'Km 15 Carretera Federal, Lt 3, Cs 1', '2025-01-19 02:55:50'),
+(55, 6, 5, 2, 'Colectivos', 'Colaboradores', 'Sin detalles', 'Comunidades', 'Capacitación Técnica', 'Fernando', 'Ortiz', 'Gómez', 'hombre', '8745639201', '2025-06-21', 'Isla Mujeres', '140 155', 'Zona Hotelera, Mz 9, Lt 11, Cs 5', '2025-01-19 02:55:50'),
+(56, 7, 1, 1, 'Colectivos', 'Voluntarios', 'Notas importantes', 'Colectivos', 'Evento Cultural', 'Andrea', 'Castillo', 'Rojas', 'mujer', '9012837465', '2024-09-10', 'Holbox', '200 125', 'Av. Norte, Mz 11, Lt 6, Cs 8', '2025-01-19 02:55:50'),
+(57, 2, 6, 3, 'Colectivos', 'Coordinadores', 'Revisión pendiente', 'Grupos', 'Charla Informativa', 'Santiago', 'Jiménez', 'Mendoza', 'hombre', '9238456712', '2025-12-02', 'Valladolid', '150 145', 'Calle Sur, Mz 22, Lt 9, Cs 12', '2025-01-19 02:55:50'),
+(58, 7, 4, 1, 'Usuarios', 'Voluntarios', 'Datos no disponibles', 'Grupos', 'Jornada Técnica', 'Alberto', 'Navarro', 'Sandoval', 'hombre', '8192037465', '2025-08-18', 'Cancún', '195 140', 'Av. Palmar, Mz 4, Lt 8, Cs 5', '2025-01-19 02:58:13'),
+(59, 6, 7, 3, 'Usuarios', 'Facilitadores', 'Pendiente revisión', 'Comunidades', 'Charla Motivacional', 'Isabel', 'Luna', 'Soto', 'mujer', '8253749102', '2026-10-25', 'Playa del Carmen', '165 185', 'Calle Este, Mz 11, Lt 12, Cs 9', '2025-01-19 02:58:13'),
+(60, 5, 6, 2, 'Usuarios', 'Coordinadores', 'Sin comentarios', 'Asociaciones', 'Mesa de Trabajo', 'Pablo', 'García', 'Molina', 'hombre', '9142837462', '2024-04-12', 'Tulum', '150 170', 'Km 18 Carretera Libre, Lt 5, Cs 3', '2025-01-19 02:58:13'),
+(61, 4, 2, 1, 'Usuarios', 'Colaboradores', 'Detalles en proceso', 'Colectivos', 'Seminario Técnico', 'Carmen', 'Rojas', 'Hernández', 'mujer', '9371845261', '2025-11-16', 'Chetumal', '180 130', 'Av. Los Olivos, Mz 13, Lt 7, Cs 6', '2025-01-19 02:58:13'),
+(62, 3, 5, 3, 'Usuarios', 'Voluntarios', 'Observaciones importantes', 'Grupos', 'Curso Práctico', 'Ricardo', 'Ortega', 'Villanueva', 'hombre', '9823745619', '2026-06-14', 'Puerto Morelos', '175 155', 'Sm 10, Mz 9, Lt 3, Cs 4', '2025-01-19 02:58:13'),
+(63, 2, 8, 2, 'Usuarios', 'Facilitadores', 'Detalles preliminares', 'Comunidades', 'Capacitación en Campo', 'Valeria', 'Moreno', 'Guzmán', 'mujer', '8923746510', '2024-01-05', 'Cozumel', '160 180', 'Zona Central, Mz 7, Lt 2, Cs 8', '2025-01-19 02:58:13'),
+(64, 1, 3, 1, 'Usuarios', 'Líderes', 'Revisión en curso', 'Asociaciones', 'Encuentro Social', 'Felipe', 'Ramírez', 'Carrillo', 'hombre', '9012738546', '2025-03-09', 'Isla Mujeres', '190 145', 'Av. Norte, Mz 5, Lt 11, Cs 7', '2025-01-19 02:58:13'),
+(65, 7, 1, 3, 'Usuarios', 'Colaboradores', 'Sin observaciones', 'Colectivos', 'Charla Técnica', 'Ana', 'González', 'Rivas', 'mujer', '9182736450', '2024-07-27', 'Holbox', '145 190', 'Calle Sur, Mz 6, Lt 8, Cs 3', '2025-01-19 02:58:13'),
+(66, 6, 9, 2, 'Usuarios', 'Coordinadores', 'Pendiente actualización', 'Grupos', 'Foro Educativo', 'Eduardo', 'Vega', 'Lara', 'hombre', '8237465910', '2026-12-21', 'Valladolid', '175 150', 'Km 10 Carretera Federal, Lt 9, Cs 1', '2025-01-19 02:58:13');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `departamentoprogramas`
+-- Estructura de tabla para la tabla `departamentoprogramas`
 --
 
 CREATE TABLE `departamentoprogramas` (
@@ -115,7 +363,7 @@ CREATE TABLE `departamentoprogramas` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `departamentos`
+-- Estructura de tabla para la tabla `departamentos`
 --
 
 CREATE TABLE `departamentos` (
@@ -126,7 +374,7 @@ CREATE TABLE `departamentos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `departamentos`
+-- Volcado de datos para la tabla `departamentos`
 --
 
 INSERT INTO `departamentos` (`ID`, `Departamento`, `Contraseña`, `VistaEspecial`) VALUES
@@ -382,7 +630,7 @@ INSERT INTO `departamentos` (`ID`, `Departamento`, `Contraseña`, `VistaEspecial
 -- --------------------------------------------------------
 
 --
--- Table structure for table `formularios`
+-- Estructura de tabla para la tabla `formularios`
 --
 
 CREATE TABLE `formularios` (
@@ -393,25 +641,18 @@ CREATE TABLE `formularios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `formularios`
+-- Volcado de datos para la tabla `formularios`
 --
 
 INSERT INTO `formularios` (`ID`, `NombreFormulario`, `UsuarioID`, `DepartamentoID`) VALUES
-(1, 'Formulario 1', 1, 3),
-(2, 'Formulario 2', 2, 2),
-(3, 'Formulario 3', 3, 5),
-(4, 'Formulario 4', 4, 4),
-(5, 'Formulario 5', 5, 6),
-(6, 'Cuidar_y_ser_cuidado_para_el_bienestar_2025', 1, 197),
-(7, 'Transformando_en_comunidad', 1, 197),
-(8, 'Fortalecimiento_para_el_cuidado_y_desarrollo_integral_de_las_infancias', 1, 197),
-(9, 'Apoyo_para_el_bienestar_2025', 1, 197),
-(10, 'Juventudes_en_transformacion', 1, 197);
+(1, 'Prueba', 1, 1),
+(2, 'rvhdsajnv', 5, 8),
+(3, 'addnjvandv', 7, 9);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `fortalecimiento_para_el_cuidado_de_las_infancias`
+-- Estructura de tabla para la tabla `fortalecimiento_para_el_cuidado_de_las_infancias`
 --
 
 CREATE TABLE `fortalecimiento_para_el_cuidado_de_las_infancias` (
@@ -439,7 +680,7 @@ CREATE TABLE `fortalecimiento_para_el_cuidado_de_las_infancias` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `judpanteones`
+-- Estructura de tabla para la tabla `judpanteones`
 --
 
 CREATE TABLE `judpanteones` (
@@ -458,7 +699,7 @@ CREATE TABLE `judpanteones` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jud_colonias_y_asentamientos_humanos_irregulares`
+-- Estructura de tabla para la tabla `jud_colonias_y_asentamientos_humanos_irregulares`
 --
 
 CREATE TABLE `jud_colonias_y_asentamientos_humanos_irregulares` (
@@ -478,7 +719,7 @@ CREATE TABLE `jud_colonias_y_asentamientos_humanos_irregulares` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jud_de_centros_deportivos`
+-- Estructura de tabla para la tabla `jud_de_centros_deportivos`
 --
 
 CREATE TABLE `jud_de_centros_deportivos` (
@@ -498,7 +739,7 @@ CREATE TABLE `jud_de_centros_deportivos` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jud_de_control_operativo_policial`
+-- Estructura de tabla para la tabla `jud_de_control_operativo_policial`
 --
 
 CREATE TABLE `jud_de_control_operativo_policial` (
@@ -516,7 +757,7 @@ CREATE TABLE `jud_de_control_operativo_policial` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jud_de_incidencia_y_estadistica_delictiva`
+-- Estructura de tabla para la tabla `jud_de_incidencia_y_estadistica_delictiva`
 --
 
 CREATE TABLE `jud_de_incidencia_y_estadistica_delictiva` (
@@ -544,7 +785,7 @@ CREATE TABLE `jud_de_incidencia_y_estadistica_delictiva` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jud_de_seguridad_ciudadana_y_de_transito`
+-- Estructura de tabla para la tabla `jud_de_seguridad_ciudadana_y_de_transito`
 --
 
 CREATE TABLE `jud_de_seguridad_ciudadana_y_de_transito` (
@@ -563,7 +804,7 @@ CREATE TABLE `jud_de_seguridad_ciudadana_y_de_transito` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jud_de_tianguis_y_via_publica`
+-- Estructura de tabla para la tabla `jud_de_tianguis_y_via_publica`
 --
 
 CREATE TABLE `jud_de_tianguis_y_via_publica` (
@@ -581,7 +822,7 @@ CREATE TABLE `jud_de_tianguis_y_via_publica` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `juventudes_en_transformacion`
+-- Estructura de tabla para la tabla `juventudes_en_transformacion`
 --
 
 CREATE TABLE `juventudes_en_transformacion` (
@@ -609,7 +850,7 @@ CREATE TABLE `juventudes_en_transformacion` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mantenimiento_menor`
+-- Estructura de tabla para la tabla `mantenimiento_menor`
 --
 
 CREATE TABLE `mantenimiento_menor` (
@@ -627,187 +868,71 @@ CREATE TABLE `mantenimiento_menor` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `mantenimiento_menor`
+-- Volcado de datos para la tabla `mantenimiento_menor`
 --
 
 INSERT INTO `mantenimiento_menor` (`ID`, `UsuarioID`, `DepartamentoID`, `FormularioID`, `Tipo`, `Actividad`, `Avance`, `Colonia`, `Direccion`, `FechaRegistro`, `Coordenadas`) VALUES
-(29, 2, 3, 1, 'Reparación', 'Banquetas', 75.00, 'San Bartolo', 'Sm 12 Mz 32 Lt 08', '2024-01-10 05:00:00', '19.274257, -99.204354'),
-(30, 5, 2, 2, 'Reparación', 'Banquetas', 120.00, 'La Cañada', 'Sm 18 Mz 65 Lt 03', '2024-11-15 05:00:00', '19.261830, -99.193460'),
-(31, 3, 5, 3, 'Reparación', 'Banquetas', 90.00, 'Villa Flores', 'Sm 40 Mz 12 Lt 09', '2024-02-20 05:00:00', '19.308949, -99.169054'),
-(32, 1, 9, 1, 'Reparación', 'Banquetas', 65.00, 'El Prado', 'Sm 10 Mz 20 Lt 02', '2024-03-18 05:00:00', '19.216057, -99.203390'),
-(33, 7, 4, 2, 'Reparación', 'Banquetas', 110.00, 'Monte Bello', 'Sm 55 Mz 08 Lt 07', '2024-04-12 05:00:00', '19.227038, -99.175424'),
-(34, 6, 8, 3, 'Reparación', 'Banquetas', 80.00, 'Colinas Verdes', 'Sm 33 Mz 15 Lt 10', '2024-12-30 05:00:00', '19.281720, -99.185046'),
-(35, 2, 7, 1, 'Reparación', 'Banquetas', 100.00, 'Lomas Altas', 'Sm 05 Mz 47 Lt 06', '2024-01-25 05:00:00', '19.231832, -99.169562'),
-(36, 1, 2, 3, 'Reparación', 'Balizamiento', 95.00, 'Los Álamos', 'Sm 11 Mz 40 Lt 03', '2025-02-14 05:00:00', '19.221822, -99.188764'),
-(37, 2, 6, 2, 'Reparación', 'Balizamiento', 85.00, 'La Primavera', 'Sm 20 Mz 36 Lt 09', '2024-11-20 05:00:00', '19.260634, -99.192950'),
-(38, 3, 8, 1, 'Reparación', 'Balizamiento', 70.00, 'Bosques del Sol', 'Sm 45 Mz 10 Lt 01', '2025-03-05 05:00:00', '19.208150, -99.199673'),
-(39, 3, 3, 3, 'Reparación', 'Balizamiento', 120.00, 'Pinos del Sur', 'Sm 60 Mz 14 Lt 08', '2024-12-18 05:00:00', '19.291651, -99.189730'),
-(40, 4, 7, 2, 'Reparación', 'Balizamiento', 110.00, 'Vista Hermosa', 'Sm 08 Mz 21 Lt 05', '2025-01-11 05:00:00', '19.260517, -99.190317'),
-(41, 5, 4, 1, 'Reparación', 'Balizamiento', 100.00, 'El Paraíso', 'Sm 29 Mz 12 Lt 07', '2025-02-22 05:00:00', '19.237459, -99.190960'),
-(42, 6, 5, 3, 'Reparación', 'Balizamiento', 65.00, 'Granjas Verdes', 'Sm 03 Mz 05 Lt 10', '2024-12-25 05:00:00', '19.299561, -99.197890'),
-(43, 7, 9, 3, 'Reparación', 'Bacheo', 130.00, 'El Mirador', 'Sm 13 Mz 18 Lt 02', '2025-01-08 05:00:00', '19.257030, -99.173763'),
-(44, 1, 1, 1, 'Reparación', 'Bacheo', 75.00, 'Lomas del Río', 'Sm 09 Mz 22 Lt 05', '2025-02-15 05:00:00', '19.210020, -99.202984'),
-(45, 5, 2, 2, 'Reparación', 'Bacheo', 90.00, 'San Rafael', 'Sm 50 Mz 19 Lt 03', '2024-11-28 05:00:00', '19.249619, -99.175324'),
-(46, 2, 3, 3, 'Reparación', 'Bacheo', 105.00, 'Monte Escondido', 'Sm 27 Mz 07 Lt 08', '2025-03-10 05:00:00', '19.215079, -99.186803'),
-(47, 6, 8, 1, 'Reparación', 'Bacheo', 85.00, 'Valle Dorado', 'Sm 32 Mz 16 Lt 01', '2024-12-22 05:00:00', '19.302432, -99.203837'),
-(48, 3, 7, 2, 'Reparación', 'Bacheo', 140.00, 'Puerta del Sol', 'Sm 06 Mz 24 Lt 09', '2025-01-20 05:00:00', '19.292993, -99.174186'),
-(49, 2, 4, 3, 'Reparación', 'Bacheo', 95.00, 'Las Colinas', 'Sm 18 Mz 30 Lt 06', '2024-11-30 05:00:00', '19.317475, -99.207499'),
-(50, 4, 5, 1, 'Mantenimiento', 'Infraestructura de edificios públicos', 80.00, 'Horizontes', 'Sm 14 Mz 28 Lt 04', '2025-02-03 05:00:00', '19.290633, -99.171223'),
-(51, 5, 3, 2, 'Mantenimiento', 'Infraestructura de edificios públicos', 10.00, 'Villa del Mar', 'Sm 21 Mz 11 Lt 07', '2024-12-12 05:00:00', '19.247150, -99.176217'),
-(52, 6, 9, 3, 'Mantenimiento', 'Infraestructura de edificios públicos', 100.00, 'Rinconada', 'Sm 31 Mz 40 Lt 02', '2025-01-15 05:00:00', '19.212663, -99.189616'),
-(53, 7, 1, 1, 'Mantenimiento', 'Infraestructura de edificios públicos', 95.00, 'Alturas del Valle', 'Sm 07 Mz 35 Lt 10', '2025-03-01 05:00:00', '19.278737, -99.199250'),
-(54, 1, 6, 2, 'Mantenimiento', 'Infraestructura de edificios públicos', 20.00, 'Praderas', 'Sm 12 Mz 19 Lt 05', '2024-11-18 05:00:00', '19.304538, -99.161709'),
-(55, 2, 8, 3, 'Mantenimiento', 'Infraestructura de edificios públicos', 75.00, 'Río Verde', 'Sm 28 Mz 17 Lt 01', '2025-01-29 05:00:00', '19.310085, -99.161725'),
-(56, 3, 7, 1, 'Mantenimiento', 'Infraestructura de edificios públicos', 90.00, 'Cumbre Alta', 'Sm 34 Mz 09 Lt 06', '2025-02-17 05:00:00', '19.293275, -99.199883'),
-(57, 3, 3, 1, 'Mantenimiento', 'Infraestructura de centros culturales', 15.00, 'Valle Escondido', 'Sm 18 Mz 22 Lt 07', '2025-02-18 05:00:00', '19.253966, -99.174747'),
-(58, 5, 5, 2, 'Mantenimiento', 'Infraestructura de centros culturales', 80.00, 'Cerrito Lindo', 'Sm 22 Mz 10 Lt 03', '2024-12-22 05:00:00', '19.208380, -99.203758'),
-(59, 4, 8, 3, 'Mantenimiento', 'Infraestructura de centros culturales', 15.00, 'Altos de la Sierra', 'Sm 14 Mz 34 Lt 08', '2025-01-25 05:00:00', '19.246021, -99.181177'),
-(60, 1, 6, 1, 'Mantenimiento', 'Infraestructura de centros culturales', 95.00, 'La Campiña', 'Sm 09 Mz 13 Lt 05', '2024-11-30 05:00:00', '19.271487, -99.191044'),
-(61, 2, 4, 1, 'Mantenimiento', 'Infraestructura de centros culturales', 90.00, 'Villas del Sol', 'Sm 30 Mz 19 Lt 02', '2025-01-08 05:00:00', '19.306556, -99.181740'),
-(62, 3, 7, 2, 'Mantenimiento', 'Infraestructura de centros culturales', 20.00, 'Colinas Blancas', 'Sm 35 Mz 24 Lt 09', '2025-02-12 05:00:00', '19.303686, -99.166173'),
-(63, 4, 9, 3, 'Mantenimiento', 'Infraestructura de centros culturales', 85.00, 'Puerta del Cielo', 'Sm 25 Mz 11 Lt 06', '2024-12-15 05:00:00', '19.263535, -99.204128'),
-(64, 5, 2, 3, 'Matenimiento', 'Infraestructura de educativos', 100.00, 'Monte Claro', 'Sm 16 Mz 25 Lt 04', '2025-01-11 05:00:00', NULL),
-(65, 6, 4, 2, 'Matenimiento', 'Infraestructura de educativos', 10.00, 'Loma Bonita', 'Sm 08 Mz 13 Lt 09', '2024-12-18 05:00:00', NULL),
-(66, 7, 6, 3, 'Matenimiento', 'Infraestructura de educativos', 95.00, 'Jardines del Sur', 'Sm 23 Mz 17 Lt 05', '2025-02-02 05:00:00', NULL),
-(67, 4, 9, 1, 'Matenimiento', 'Infraestructura de educativos', 75.00, 'Colinas de la Paz', 'Sm 12 Mz 08 Lt 01', '2024-11-28 05:00:00', NULL),
-(68, 4, 1, 3, 'Matenimiento', 'Infraestructura de educativos', 30.00, 'Rincón del Valle', 'Sm 31 Mz 22 Lt 07', '2025-01-20 05:00:00', NULL),
-(69, 5, 7, 1, 'Matenimiento', 'Infraestructura de educativos', 85.00, 'Las Haciendas', 'Sm 14 Mz 34 Lt 02', '2025-02-15 05:00:00', NULL),
-(70, 1, 8, 2, 'Matenimiento', 'Infraestructura de educativos', 90.00, 'El Refugio', 'Sm 05 Mz 11 Lt 06', '2024-12-09 05:00:00', NULL),
-(71, 2, 5, 2, 'Mantenimiento', 'Infraestructura de bibliotecas', 20.00, 'Bosque Real', 'Sm 20 Mz 15 Lt 03', '2025-01-30 05:00:00', '19.296491, -99.165364'),
-(72, 3, 3, 3, 'Mantenimiento', 'Infraestructura de bibliotecas', 75.00, 'Villas del Norte', 'Sm 12 Mz 17 Lt 09', '2024-12-14 05:00:00', '19.294019, -99.187273'),
-(73, 4, 6, 1, 'Mantenimiento', 'Infraestructura de bibliotecas', 40.00, 'Lomas del Lago', 'Sm 18 Mz 13 Lt 07', '2025-02-05 05:00:00', '19.280440, -99.202408'),
-(74, 5, 8, 2, 'Mantenimiento', 'Infraestructura de bibliotecas', 95.00, 'Paseos del Sol', 'Sm 09 Mz 30 Lt 01', '2024-11-22 05:00:00', '19.264688, -99.192803'),
-(75, 6, 2, 3, 'Mantenimiento', 'Infraestructura de bibliotecas', 10.00, 'Colinas Verdes', 'Sm 07 Mz 22 Lt 08', '2025-01-18 05:00:00', '19.307607, -99.174076'),
-(76, 7, 7, 1, 'Mantenimiento', 'Infraestructura de bibliotecas', 100.00, 'Puerta Dorada', 'Sm 16 Mz 35 Lt 05', '2025-02-10 05:00:00', '19.274843, -99.204720'),
-(77, 1, 9, 3, 'Mantenimiento', 'Infraestructura de bibliotecas', 85.00, 'Horizontes del Río', 'Sm 25 Mz 08 Lt 06', '2024-12-08 05:00:00', '19.256049, -99.205500'),
-(78, 5, 4, 1, 'Mantenimiento', 'Infraestructura de mercados', 25.00, 'Altos del Mirador', 'Sm 14 Mz 20 Lt 04', '2025-01-07 05:00:00', '19.303855, -99.194511'),
-(79, 6, 1, 2, 'Mantenimiento', 'Infraestructura de mercados', 90.00, 'Vistas del Valle', 'Sm 21 Mz 15 Lt 07', '2024-12-19 05:00:00', '19.281308, -99.178720'),
-(80, 1, 5, 3, 'Mantenimiento', 'Infraestructura de mercados', 10.00, 'Los Encinos', 'Sm 18 Mz 09 Lt 03', '2025-02-14 05:00:00', '19.302653, -99.177583'),
-(81, 2, 6, 2, 'Mantenimiento', 'Infraestructura de mercados', 80.00, 'La Primavera', 'Sm 07 Mz 13 Lt 01', '2024-11-21 05:00:00', '19.251129, -99.198094'),
-(82, 3, 8, 3, 'Mantenimiento', 'Infraestructura de mercados', 15.00, 'Monteverde', 'Sm 09 Mz 25 Lt 05', '2025-01-13 05:00:00', '19.290083, -99.198030'),
-(83, 4, 7, 1, 'Mantenimiento', 'Infraestructura de mercados', 30.00, 'Bosques del Norte', 'Sm 31 Mz 10 Lt 09', '2025-02-18 05:00:00', '19.283919, -99.162230'),
-(84, 5, 9, 2, 'Mantenimiento', 'Infraestructura de mercados', 95.00, 'Puerta de Hierro', 'Sm 12 Mz 17 Lt 06', '2024-12-10 05:00:00', '19.256213, -99.182599'),
-(85, 1, 3, 2, 'Instalacion', 'Hidrosanitaria', 100.00, 'La Magdalena Contreras', 'Calle de los Encinos 45', '2024-01-10 05:00:00', '19.210116, -99.180085'),
-(86, 2, 4, 1, 'Instalacion', 'Bombeo', 55.00, 'San Andrés Totoltepec', 'Av. de los Olivos 123', '2024-02-10 05:00:00', '19.281213, -99.172213'),
-(87, 3, 2, 5, 'Instalacion', 'Sistemas electricos', 60.00, 'Nochebuena', 'Calle del Sol 78', '2024-03-10 05:00:00', '19.264515, -99.183781'),
-(88, 4, 6, 3, 'Instalacion', 'Albañileria', 70.00, 'San Juan Tepepan', 'Callejón de la Luna 52', '2024-04-10 05:00:00', '19.297363, -99.174423'),
-(89, 5, 1, 9, 'Instalacion', 'Pintura', 50.00, 'Pueblo de los Reyes', 'Calle de la Paz 19', '2024-05-10 05:00:00', '19.301757, -99.192511'),
-(90, 6, 3, 4, 'Instalacion', 'Resanado', 80.00, 'Parques de la Herradura', 'Avenida Reforma 98', '2024-06-10 05:00:00', '19.309610, -99.170399'),
-(91, 7, 5, 2, 'Instalacion', 'Impermeabilización', 60.00, 'Hacienda de Coyoacán', 'Calle del Río 34', '2024-07-10 05:00:00', '19.309277, -99.187490'),
-(92, 8, 7, 8, 'Instalacion', 'Herrería', 30.00, 'Villa Coapa', 'Avenida del Bosque 56', '2024-01-10 05:00:00', '19.232277, -99.161218'),
-(93, 9, 8, 6, 'Instalacion', 'Hidrosanitaria', 50.00, 'Lomas de Padierna', 'Avenida Nacional 12', '2024-01-10 05:00:00', '19.312270, -99.158232'),
-(94, 1, 2, 7, 'Instalacion', 'Bombeo', 65.00, 'San Pedro Mártir', 'Calle de los Pinos 23', '2024-01-10 05:00:00', '19.215140, -99.187941'),
-(95, 2, 3, 1, 'Instalacion', 'Sistemas electricos', 75.00, 'La Cañada', 'Calle del Sol 67', '2024-01-10 05:00:00', '19.289729, -99.179293'),
-(96, 3, 4, 2, 'Instalacion', 'Albañileria', 85.00, 'Las Águilas', 'Calle Nueva 8', '2024-01-10 05:00:00', '19.271092, -99.197594'),
-(97, 4, 5, 3, 'Instalacion', 'Pintura', 90.00, 'La Fama', 'Avenida Central 3', '2024-01-10 05:00:00', '19.235689, -99.173152'),
-(98, 5, 6, 4, 'Instalacion', 'Resanado', 20.00, 'El Seminario', 'Calle de los Árboles 44', '2024-01-10 05:00:00', '19.280764, -99.194036'),
-(99, 6, 7, 5, 'Instalacion', 'Impermeabilización', 40.00, 'Los Olivos', 'Avenida de los Héroes 100', '2024-01-10 05:00:00', '19.245817, -99.160810'),
-(100, 7, 8, 6, 'Instalacion', 'Herrería', 30.00, 'Parque de los Venados', 'Calle Principal 82', '2024-01-10 05:00:00', '19.276142, -99.191567'),
-(101, 8, 9, 7, 'Instalacion', 'Hidrosanitaria', 60.00, 'Santa Ursula', 'Calle del Lago 50', '2024-01-10 05:00:00', '19.286843, -99.174975'),
-(102, 9, 1, 8, 'Instalacion', 'Bombeo', 45.00, 'San Miguel Topilejo', 'Avenida de la Cima 29', '2024-01-10 05:00:00', '19.217241, -99.182936'),
-(103, 1, 3, 9, 'Instalacion', 'Sistemas electricos', 65.00, 'Chimalcoyoc', 'Calle del Bosque 75', '2024-01-10 05:00:00', '19.228485, -99.183500'),
-(104, 2, 4, 1, 'Instalacion', 'Albañileria', 80.00, 'San Andrés', 'Calle de la Calera 14', '2024-01-10 05:00:00', '19.298549, -99.172572'),
-(105, 3, 5, 2, 'Instalacion', 'Pintura', 90.00, 'Tepepan', 'Avenida México 61', '2024-01-10 05:00:00', '19.208563, -99.159868'),
-(106, 4, 6, 3, 'Instalacion', 'Resanado', 30.00, 'Parques de la Fama', 'Calle de las Aguas 99', '2024-01-10 05:00:00', '19.288262, -99.166845'),
-(107, 5, 7, 4, 'Instalacion', 'Impermeabilización', 55.00, 'Villa Coapa', 'Avenida Altavista 45', '2024-01-10 05:00:00', '19.302415, -99.163747'),
-(108, 6, 8, 5, 'Instalacion', 'Herrería', 70.00, 'San Bartolo', 'Callejón de los Árboles 25', '2024-01-10 05:00:00', '19.294033, -99.192093'),
-(109, 7, 9, 6, 'Instalacion', 'Hidrosanitaria', 40.00, 'La Magdalena Contreras', 'Calle de los Pinos 67', '2024-01-10 05:00:00', '19.227384, -99.158532'),
-(110, 8, 1, 7, 'Instalacion', 'Bombeo', 50.00, 'San Andrés Totoltepec', 'Calle de las Flores 32', '2024-01-10 05:00:00', '19.246493, -99.165782'),
-(111, 9, 2, 8, 'Instalacion', 'Sistemas electricos', 60.00, 'Nochebuena', 'Avenida de la Luz 101', '2024-01-10 05:00:00', '19.219417, -99.205569'),
-(112, 1, 3, 9, 'Instalacion', 'Albañileria', 55.00, 'San Juan Tepepan', 'Callejón de la Luna 45', '2024-01-10 05:00:00', '19.302989, -99.196272'),
-(113, 2, 4, 1, 'Instalacion', 'Pintura', 75.00, 'Pueblo de los Reyes', 'Calle de la Paz 45', '2024-01-10 05:00:00', '19.264544, -99.161540'),
-(114, 3, 5, 2, 'Instalacion', 'Resanado', 90.00, 'Parques de la Herradura', 'Avenida Reforma 100', '2024-01-10 05:00:00', '19.211930, -99.185312'),
-(115, 4, 6, 3, 'Instalacion', 'Impermeabilización', 80.00, 'Hacienda de Coyoacán', 'Calle del Río 50', '2024-01-10 05:00:00', '19.218279, -99.199566'),
-(116, 5, 7, 4, 'Instalacion', 'Herrería', 70.00, 'Villa Coapa', 'Avenida del Bosque 70', '2024-01-10 05:00:00', '19.262432, -99.206455'),
-(117, 6, 8, 5, 'Instalacion', 'Hidrosanitaria', 90.00, 'Lomas de Padierna', 'Avenida Nacional 24', '2024-01-10 05:00:00', '19.274197, -99.159050'),
-(118, 7, 9, 6, 'Instalacion', 'Bombeo', 60.00, 'La Cañada', 'Calle de los Pinos 89', '2024-01-10 05:00:00', '19.210358, -99.196354'),
-(119, 8, 1, 7, 'Instalacion', 'Sistemas electricos', 55.00, 'San Andrés', 'Calle de la Calera 25', '2024-01-10 05:00:00', '19.211535, -99.181769'),
-(120, 9, 2, 8, 'Instalacion', 'Albañileria', 65.00, 'Tepepan', 'Calle México 10', '2024-01-10 05:00:00', '19.258438, -99.168926'),
-(121, 1, 3, 9, 'Instalacion', 'Pintura', 85.00, 'Las Águilas', 'Calle Nueva 34', '2024-01-10 05:00:00', '19.259001, -99.206175'),
-(122, 2, 4, 1, 'Instalacion', 'Resanado', 70.00, 'La Fama', 'Avenida Central 10', '2024-01-10 05:00:00', '19.287571, -99.179494'),
-(123, 3, 5, 2, 'Instalacion', 'Impermeabilización', 100.00, 'El Seminario', 'Calle de los Árboles 18', '2024-01-10 05:00:00', '19.275352, -99.187308'),
-(124, 4, 6, 3, 'Instalacion', 'Herrería', 50.00, 'Los Olivos', 'Avenida de los Héroes 25', '2024-01-10 05:00:00', '19.226050, -99.175915'),
-(125, 5, 7, 4, 'Instalacion', 'Hidrosanitaria', 65.00, 'Parque de los Venados', 'Calle Principal 45', '2024-01-10 05:00:00', '19.279288, -99.189102'),
-(126, 6, 8, 5, 'Instalacion', 'Bombeo', 75.00, 'San Bartolo', 'Callejón de los Árboles 88', '2024-01-10 05:00:00', '19.304519, -99.192198'),
-(127, 7, 9, 6, 'Instalacion', 'Sistemas electricos', 45.00, 'San Miguel Topilejo', 'Avenida Nacional 22', '2024-01-10 05:00:00', '19.304766, -99.182346'),
-(128, 8, 1, 7, 'Instalacion', 'Albañileria', 55.00, 'Chimalcoyoc', 'Calle del Bosque 99', '2024-01-10 05:00:00', '19.302392, -99.167297'),
-(129, 9, 2, 8, 'Instalacion', 'Pintura', 85.00, 'San Juan Tepepan', 'Callejón de la Luna 75', '2024-01-10 05:00:00', '19.255056, -99.170027'),
-(130, 1, 3, 9, 'Instalacion', 'Resanado', 50.00, 'Pueblo de los Reyes', 'Calle de la Paz 60', '2024-01-10 05:00:00', '19.257030, -99.207349'),
-(131, 2, 4, 1, 'Instalacion', 'Impermeabilización', 40.00, 'Parques de la Herradura', 'Avenida Reforma 25', '2024-01-10 05:00:00', '19.280569, -99.191888'),
-(132, 3, 5, 2, 'Instalacion', 'Herrería', 60.00, 'Hacienda de Coyoacán', 'Calle del Río 85', '2024-01-10 05:00:00', '19.270031, -99.162221'),
-(133, 4, 6, 3, 'Instalacion', 'Hidrosanitaria', 45.00, 'Villa Coapa', 'Avenida del Bosque 40', '2024-01-10 05:00:00', '19.297976, -99.187710'),
-(134, 5, 7, 4, 'Instalacion', 'Bombeo', 70.00, 'Lomas de Padierna', 'Avenida Nacional 30', '2024-01-10 05:00:00', '19.263762, -99.189002'),
-(135, 6, 8, 5, 'Instalacion', 'Sistemas electricos', 60.00, 'La Magdalena Contreras', 'Calle de los Pinos 50', '2024-01-10 05:00:00', '19.242192, -99.184148'),
-(136, 7, 9, 6, 'Instalacion', 'Albañileria', 80.00, 'La Cañada', 'Calle de los Olivos 20', '2024-01-10 05:00:00', '19.250298, -99.180289'),
-(137, 8, 1, 7, 'Instalacion', 'Pintura', 45.00, 'San Andrés Totoltepec', 'Av. de los Olivos 45', '2024-01-10 05:00:00', '19.268424, -99.200668'),
-(138, 9, 2, 8, 'Instalacion', 'Resanado', 60.00, 'Nochebuena', 'Calle del Sol 65', '2024-01-10 05:00:00', '19.209878, -99.172591'),
-(139, 1, 3, 9, 'Instalacion', 'Impermeabilización', 50.00, 'San Juan Tepepan', 'Callejón de la Luna 22', '2024-01-10 05:00:00', '19.254364, -99.205718'),
-(140, 2, 4, 1, 'Instalacion', 'Herrería', 70.00, 'Pueblo de los Reyes', 'Calle de la Paz 52', '2024-01-10 05:00:00', '19.306512, -99.187819'),
-(141, 3, 5, 2, 'Instalacion', 'Hidrosanitaria', 65.00, 'Parques de la Herradura', 'Avenida Reforma 77', '2024-01-10 05:00:00', '19.236951, -99.199607'),
-(142, 4, 6, 3, 'Instalacion', 'Bombeo', 80.00, 'Hacienda de Coyoacán', 'Calle del Río 12', '2024-01-10 05:00:00', '19.315971, -99.184655'),
-(143, 5, 7, 4, 'Instalacion', 'Sistemas electricos', 40.00, 'Villa Coapa', 'Avenida del Bosque 35', '2024-01-10 05:00:00', '19.243379, -99.194491'),
-(144, 6, 8, 5, 'Instalacion', 'Albañileria', 60.00, 'Lomas de Padierna', 'Avenida Nacional 14', '2024-01-10 05:00:00', '19.242966, -99.165923'),
-(145, 7, 9, 6, 'Instalacion', 'Pintura', 55.00, 'La Magdalena Contreras', 'Calle de los Pinos 15', '2024-01-10 05:00:00', '19.228445, -99.184627'),
-(146, 8, 1, 7, 'Instalacion', 'Resanado', 45.00, 'La Cañada', 'Calle de los Olivos 34', '2024-01-10 05:00:00', '19.286264, -99.197109'),
-(147, 9, 2, 8, 'Instalacion', 'Impermeabilización', 60.00, 'San Andrés Totoltepec', 'Av. de los Olivos 34', '2024-01-10 05:00:00', '19.305509, -99.165925'),
-(148, 1, 3, 9, 'Instalacion', 'Herrería', 55.00, 'Nochebuena', 'Calle del Sol 45', '2024-01-10 05:00:00', '19.260798, -99.161094'),
-(149, 2, 4, 1, 'Instalacion', 'Hidrosanitaria', 65.00, 'San Juan Tepepan', 'Callejón de la Luna 89', '2024-01-10 05:00:00', '19.228073, -99.199962'),
-(150, 3, 5, 2, 'Instalacion', 'Bombeo', 75.00, 'Pueblo de los Reyes', 'Calle de la Paz 78', '2024-01-10 05:00:00', '19.228699, -99.181934'),
-(151, 1, 1, 1, 'Reparación', 'Hidrosanitaria', 10.00, 'LA PRIMAVERA', 'Sm 12 Mz 34 Lt 01', '2020-04-22 05:00:00', '19.207591, -99.207298'),
-(152, 4, 3, 2, 'Reparación', 'Bombeo', 20.00, 'LOS PASTORES', 'Av. Las Flores 7', '2021-03-15 05:00:00', '19.209453, -99.203669'),
-(153, 7, 8, 5, 'Reparación', 'Sistemas electricos', 30.00, 'LA TORTUGA XOLALPA-HCO COLEGIO MILITAR', 'Callejón del Sol 18', '2022-09-10 05:00:00', '19.243780, -99.186537'),
-(154, 2, 1, 4, 'Reparación', 'Albañilería', 40.00, 'JARDINES EN LA MONTAA', 'Av. Tepepan 2', '2020-12-05 05:00:00', '19.219249, -99.193685'),
-(155, 3, 9, 1, 'Reparación', 'Pintura', 50.00, 'SAN MIGUEL TEHUISCO-LOS ANGELES-AYOMETITLA', 'Calle Real 20', '2021-06-17 05:00:00', '19.214219, -99.183675'),
-(156, 5, 4, 8, 'Reparación', 'Resanado', 60.00, 'FUENTES DEL PEDREGAL', 'Calle Los Robles 6', '2022-10-12 05:00:00', '19.229419, -99.179159'),
-(157, 8, 6, 3, 'Reparación', 'Impermeabilización', 70.00, 'RINCONADA (U HAB)', 'Calle de la Loma 9', '2023-05-30 05:00:00', '19.233491, -99.183452'),
-(158, 9, 7, 2, 'Reparación', 'Herrería', 80.00, 'JARDINES DEL AJUSCO', 'Av. Periférico Sur 17', '2021-07-22 05:00:00', '19.284060, -99.205646'),
-(159, 1, 3, 6, 'Reparación', 'Hidrosanitaria', 90.00, 'LOS ENCINOS', 'Avenida Los Álamos 11', '2022-11-05 05:00:00', '19.218210, -99.188719'),
-(160, 4, 5, 7, 'Reparación', 'Bombeo', 100.00, 'SAN PEDRO MARTIR (PBLO)', 'Calle La Primavera 13', '2023-03-19 05:00:00', '19.271963, -99.167338'),
-(161, 3, 6, 4, 'Reparación', 'Sistemas electricos', 10.00, 'SANTO TOMAS AJUSCO (PBLO)', 'Calle del Sol 20', '2020-01-23 05:00:00', '19.235895, -99.163453'),
-(162, 5, 7, 9, 'Reparación', 'Albañilería', 20.00, 'SAN MIGUEL TOPILEJO (PBLO)', 'Calle Larga 15', '2021-08-19 05:00:00', '19.276833, -99.182066'),
-(163, 6, 9, 2, 'Reparación', 'Pintura', 30.00, 'TEZONTITLA', 'Callejón del Viento 3', '2020-02-15 05:00:00', '19.279279, -99.170668'),
-(164, 1, 5, 7, 'Reparación', 'Resanado', 40.00, 'LA PRIMAVERA', 'Boulevard San Pedro 9', '2021-04-11 05:00:00', '19.287309, -99.186610'),
-(165, 2, 3, 6, 'Reparación', 'Impermeabilización', 50.00, 'HEROES DE 1910', 'Av. Las Palmas 4', '2022-07-30 05:00:00', '19.307864, -99.192071'),
-(166, 3, 1, 5, 'Reparación', 'Herrería', 60.00, 'XAXALCO', 'Calle del Árbol 8', '2023-01-10 05:00:00', '19.296130, -99.202356'),
-(167, 4, 8, 9, 'Reparación', 'Hidrosanitaria', 70.00, 'JARDINES COAPA-BELISARIO DOMINGUEZ', 'Calle Los Pinos 12', '2021-06-25 05:00:00', '19.218192, -99.198631'),
-(168, 5, 2, 4, 'Reparación', 'Bombeo', 80.00, 'TORIELLO GUERRA', 'Calle del Río 16', '2022-10-12 05:00:00', '19.272978, -99.185291'),
-(169, 6, 1, 3, 'Reparación', 'Sistemas electricos', 90.00, 'FUENTES Y PEDREGAL DE TEPEPAN', 'Av. Los Cipreses 5', '2023-08-01 05:00:00', '19.255364, -99.165346'),
-(170, 1, 7, 6, 'Reparación', 'Albañilería', 100.00, 'LOMAS DE TEPEMECATL', 'Calle Río Nilo 19', '2020-11-29 05:00:00', '19.307602, -99.206457'),
-(171, 4, 5, 8, 'Reparación', 'Pintura', 10.00, 'SAN PEDRO APOSTOL (BARR)', 'Calle del Mezquite 21', '2021-02-03 05:00:00', '19.248671, -99.167059'),
-(172, 2, 9, 7, 'Reparación', 'Resanado', 20.00, 'PEDREGAL DE SN NICOLAS 4A SECC I', 'Calle Rincón 4', '2022-04-18 05:00:00', '19.308837, -99.198511'),
-(173, 3, 1, 2, 'Reparación', 'Impermeabilización', 30.00, 'LA TORTUGA XOLALPA-HCO COLEGIO MILITAR', 'Callejón de la Luna 10', '2020-12-05 05:00:00', '19.222368, -99.200677'),
-(174, 5, 6, 1, 'Reparación', 'Herrería', 40.00, 'JARDINES DEL AJUSCO', 'Av. Constitución 25', '2021-09-30 05:00:00', '19.237948, -99.158769'),
-(175, 2, 4, 8, 'Reparación', 'Hidrosanitaria', 50.00, 'ISIDRO FABELA II (ORIENTE)', 'Calle La Cima 2', '2022-01-22 05:00:00', '19.212199, -99.193013'),
-(176, 3, 8, 3, 'Reparación', 'Bombeo', 60.00, 'RINCON LAS HADAS-VILLA ROYALE-FUENTES Y ARCONADA COAPA', 'Calle Los Naranjos 14', '2023-04-08 05:00:00', '19.242755, -99.170834'),
-(177, 6, 2, 5, 'Reparación', 'Sistemas electricos', 70.00, 'XAXALIPAC', 'Callejón del Parque 5', '2022-06-17 05:00:00', '19.285061, -99.191224'),
-(178, 1, 3, 7, 'Reparación', 'Albañilería', 80.00, 'VILLA COAPA (RDCIAL)', 'Avenida San Antonio 9', '2023-11-21 05:00:00', '19.263853, -99.178252'),
-(179, 4, 1, 6, 'Reparación', 'Pintura', 90.00, 'VALLE DE TEPEPAN', 'Callejón del Sol 13', '2020-09-27 05:00:00', '19.250169, -99.198269'),
-(180, 7, 9, 4, 'Reparación', 'Resanado', 100.00, 'LA MAGDALENA PETLACALCO (PBLO)', 'Av. Central 17', '2021-10-12 05:00:00', '19.291036, -99.195339'),
-(181, 2, 8, 3, 'Reparación', 'Impermeabilización', 10.00, 'TETENCO (PJE)', 'Calle de la Paz 20', '2020-05-05 05:00:00', '19.310663, -99.159521'),
-(182, 5, 3, 8, 'Reparación', 'Herrería', 20.00, 'GRANJAS COAPA', 'Calle de los Álamos 8', '2021-03-22 05:00:00', '19.315778, -99.205350'),
-(183, 3, 7, 9, 'Reparación', 'Hidrosanitaria', 30.00, 'SAN LORENZO HUIPULCO', 'Callejón Verde 5', '2022-02-18 05:00:00', '19.236318, -99.198456'),
-(184, 6, 1, 5, 'Reparación', 'Bombeo', 40.00, 'SAN MIGUEL AJUSCO (PBLO)', 'Avenida del Pueblo 22', '2023-12-03 05:00:00', '19.220528, -99.205021'),
-(185, 7, 2, 4, 'Reparación', 'Sistemas electricos', 50.00, 'SAN MIGUEL TOXIAC', 'Calle Jardín 14', '2020-06-10 05:00:00', '19.305681, -99.191798'),
-(186, 4, 8, 2, 'Reparación', 'Albañilería', 60.00, 'LA LIBERTAD - IXTLAHUACA', 'Calle Los Pinos 6', '2021-11-02 05:00:00', '19.305682, -99.181466'),
-(187, 1, 3, 6, 'Reparación', 'Pintura', 70.00, 'FUENTES Y PEDREGAL DE TEPEPAN', 'Calle del Río 18', '2022-12-13 05:00:00', '19.309327, -99.204176'),
-(188, 5, 9, 7, 'Reparación', 'Resanado', 80.00, 'SAN PEDRO MARTIR (PBLO)', 'Callejón de la Estrella 3', '2023-01-29 05:00:00', '19.268578, -99.178657'),
-(189, 6, 1, 5, 'Reparación', 'Impermeabilización', 90.00, 'DOLORES TLALI', 'Av. de los Naranjos 12', '2020-11-15 05:00:00', '19.231543, -99.189386'),
-(190, 2, 6, 4, 'Reparación', 'Herrería', 100.00, 'LA PRIMAVERA', 'Calle del Lago 5', '2021-07-28 05:00:00', '19.224622, -99.172928'),
-(191, 7, 3, 9, 'Reparación', 'Hidrosanitaria', 10.00, 'LOMAS DE PADIERNA II', 'Callejón del Río 4', '2022-10-05 05:00:00', '19.316423, -99.163663'),
-(192, 4, 1, 2, 'Reparación', 'Bombeo', 20.00, 'LOS ENCINOS', 'Calle de la Loma 12', '2023-09-17 05:00:00', '19.252936, -99.185747'),
-(193, 5, 8, 6, 'Reparación', 'Sistemas electricos', 30.00, 'JARDINES EN LA MONTAA', 'Calle Real 8', '2020-04-01 05:00:00', '19.310472, -99.188730'),
-(194, 6, 2, 1, 'Reparación', 'Albañilería', 40.00, 'EL ARENAL', 'Avenida México 15', '2021-12-07 05:00:00', '19.215053, -99.196644'),
-(195, 2, 7, 3, 'Reparación', 'Pintura', 50.00, 'HEROES DE PADIERNA II', 'Callejón Central 6', '2022-05-20 05:00:00', '19.304255, -99.170170'),
-(196, 3, 6, 8, 'Reparación', 'Resanado', 60.00, 'VILLA LAZARO CARDENAS', 'Calle San Pedro 19', '2023-02-14 05:00:00', '19.217869, -99.195925'),
-(197, 4, 1, 9, 'Reparación', 'Impermeabilización', 70.00, 'VALLE ESCONDIDO', 'Av. Bosques 7', '2020-06-24 05:00:00', '19.303717, -99.173549'),
-(198, 5, 3, 4, 'Reparación', 'Herrería', 80.00, 'HEROES DE PADIERNA I', 'Calle Lirio 5', '2021-08-03 05:00:00', '19.292305, -99.166614'),
-(199, 7, 4, 2, 'Reparación', 'Hidrosanitaria', 90.00, 'SAN ANDRES TOTOLTEPEC (PBLO)', 'Calle de los Pinos 10', '2022-03-27 05:00:00', '19.292834, -99.186219'),
-(200, 6, 5, 1, 'Reparación', 'Bombeo', 100.00, 'CALZADA DE TLALPAN', 'Calle Olivo 8', '2023-09-12 05:00:00', '19.295595, -99.171128');
+(1, 2, 3, 1, 'Reparación', 'Banquetas', '75.00', 'San Bartolo', 'Sm 12 Mz 32 Lt 08', '2024-01-10 05:00:00', NULL),
+(2, 5, 2, 2, 'Reparación', 'Banquetas', '120.00', 'La Cañada', 'Sm 18 Mz 65 Lt 03', '2024-11-15 05:00:00', NULL),
+(3, 3, 5, 3, 'Reparación', 'Banquetas', '90.00', 'Villa Flores', 'Sm 40 Mz 12 Lt 09', '2024-02-20 05:00:00', NULL),
+(4, 1, 9, 1, 'Reparación', 'Banquetas', '65.00', 'El Prado', 'Sm 10 Mz 20 Lt 02', '2024-03-18 05:00:00', NULL),
+(5, 7, 4, 2, 'Reparación', 'Banquetas', '110.00', 'Monte Bello', 'Sm 55 Mz 08 Lt 07', '2024-04-12 05:00:00', NULL),
+(6, 6, 8, 3, 'Reparación', 'Banquetas', '80.00', 'Colinas Verdes', 'Sm 33 Mz 15 Lt 10', '2024-12-30 05:00:00', NULL),
+(7, 2, 7, 1, 'Reparación', 'Banquetas', '100.00', 'Lomas Altas', 'Sm 05 Mz 47 Lt 06', '2024-01-25 05:00:00', NULL),
+(8, 1, 2, 3, 'Reparación', 'Balizamiento', '95.00', 'Los Álamos', 'Sm 11 Mz 40 Lt 03', '2025-02-14 05:00:00', NULL),
+(9, 2, 6, 2, 'Reparación', 'Balizamiento', '85.00', 'La Primavera', 'Sm 20 Mz 36 Lt 09', '2024-11-20 05:00:00', NULL),
+(10, 3, 8, 1, 'Reparación', 'Balizamiento', '70.00', 'Bosques del Sol', 'Sm 45 Mz 10 Lt 01', '2025-03-05 05:00:00', NULL),
+(11, 3, 3, 3, 'Reparación', 'Balizamiento', '120.00', 'Pinos del Sur', 'Sm 60 Mz 14 Lt 08', '2024-12-18 05:00:00', NULL),
+(12, 4, 7, 2, 'Reparación', 'Balizamiento', '110.00', 'Vista Hermosa', 'Sm 08 Mz 21 Lt 05', '2025-01-11 05:00:00', NULL),
+(13, 5, 4, 1, 'Reparación', 'Balizamiento', '100.00', 'El Paraíso', 'Sm 29 Mz 12 Lt 07', '2025-02-22 05:00:00', NULL),
+(14, 6, 5, 3, 'Reparación', 'Balizamiento', '65.00', 'Granjas Verdes', 'Sm 03 Mz 05 Lt 10', '2024-12-25 05:00:00', NULL),
+(15, 7, 9, 3, 'Reparación', 'Bacheo', '130.00', 'El Mirador', 'Sm 13 Mz 18 Lt 02', '2025-01-08 05:00:00', NULL),
+(16, 1, 1, 1, 'Reparación', 'Bacheo', '75.00', 'Lomas del Río', 'Sm 09 Mz 22 Lt 05', '2025-02-15 05:00:00', NULL),
+(17, 5, 2, 2, 'Reparación', 'Bacheo', '90.00', 'San Rafael', 'Sm 50 Mz 19 Lt 03', '2024-11-28 05:00:00', NULL),
+(18, 2, 3, 3, 'Reparación', 'Bacheo', '105.00', 'Monte Escondido', 'Sm 27 Mz 07 Lt 08', '2025-03-10 05:00:00', NULL),
+(19, 6, 8, 1, 'Reparación', 'Bacheo', '85.00', 'Valle Dorado', 'Sm 32 Mz 16 Lt 01', '2024-12-22 05:00:00', NULL),
+(20, 3, 7, 2, 'Reparación', 'Bacheo', '140.00', 'Puerta del Sol', 'Sm 06 Mz 24 Lt 09', '2025-01-20 05:00:00', NULL),
+(21, 2, 4, 3, 'Reparación', 'Bacheo', '95.00', 'Las Colinas', 'Sm 18 Mz 30 Lt 06', '2024-11-30 05:00:00', NULL),
+(22, 4, 5, 1, 'Mantenimiento', 'Infraestructura de edificios públicos', '80.00', 'Horizontes', 'Sm 14 Mz 28 Lt 04', '2025-02-03 05:00:00', NULL),
+(23, 5, 3, 2, 'Mantenimiento', 'Infraestructura de edificios públicos', '10.00', 'Villa del Mar', 'Sm 21 Mz 11 Lt 07', '2024-12-12 05:00:00', NULL),
+(24, 6, 9, 3, 'Mantenimiento', 'Infraestructura de edificios públicos', '100.00', 'Rinconada', 'Sm 31 Mz 40 Lt 02', '2025-01-15 05:00:00', NULL),
+(25, 7, 1, 1, 'Mantenimiento', 'Infraestructura de edificios públicos', '95.00', 'Alturas del Valle', 'Sm 07 Mz 35 Lt 10', '2025-03-01 05:00:00', NULL),
+(26, 1, 6, 2, 'Mantenimiento', 'Infraestructura de edificios públicos', '20.00', 'Praderas', 'Sm 12 Mz 19 Lt 05', '2024-11-18 05:00:00', NULL),
+(27, 2, 8, 3, 'Mantenimiento', 'Infraestructura de edificios públicos', '75.00', 'Río Verde', 'Sm 28 Mz 17 Lt 01', '2025-01-29 05:00:00', NULL),
+(28, 3, 7, 1, 'Mantenimiento', 'Infraestructura de edificios públicos', '90.00', 'Cumbre Alta', 'Sm 34 Mz 09 Lt 06', '2025-02-17 05:00:00', NULL),
+(29, 3, 3, 1, 'Mantenimiento', 'Infraestructura de centros culturales', '15.00', 'Valle Escondido', 'Sm 18 Mz 22 Lt 07', '2025-02-18 05:00:00', NULL),
+(30, 5, 5, 2, 'Mantenimiento', 'Infraestructura de centros culturales', '80.00', 'Cerrito Lindo', 'Sm 22 Mz 10 Lt 03', '2024-12-22 05:00:00', NULL),
+(31, 4, 8, 3, 'Mantenimiento', 'Infraestructura de centros culturales', '15.00', 'Altos de la Sierra', 'Sm 14 Mz 34 Lt 08', '2025-01-25 05:00:00', NULL),
+(32, 1, 6, 1, 'Mantenimiento', 'Infraestructura de centros culturales', '95.00', 'La Campiña', 'Sm 09 Mz 13 Lt 05', '2024-11-30 05:00:00', NULL),
+(33, 2, 4, 1, 'Mantenimiento', 'Infraestructura de centros culturales', '90.00', 'Villas del Sol', 'Sm 30 Mz 19 Lt 02', '2025-01-08 05:00:00', NULL),
+(34, 3, 7, 2, 'Mantenimiento', 'Infraestructura de centros culturales', '20.00', 'Colinas Blancas', 'Sm 35 Mz 24 Lt 09', '2025-02-12 05:00:00', NULL),
+(35, 4, 9, 3, 'Mantenimiento', 'Infraestructura de centros culturales', '85.00', 'Puerta del Cielo', 'Sm 25 Mz 11 Lt 06', '2024-12-15 05:00:00', NULL),
+(36, 5, 2, 3, 'Matenimiento', 'Infraestructura de educativos', '100.00', 'Monte Claro', 'Sm 16 Mz 25 Lt 04', '2025-01-11 05:00:00', NULL),
+(37, 6, 4, 2, 'Matenimiento', 'Infraestructura de educativos', '10.00', 'Loma Bonita', 'Sm 08 Mz 13 Lt 09', '2024-12-18 05:00:00', NULL),
+(38, 7, 6, 3, 'Matenimiento', 'Infraestructura de educativos', '95.00', 'Jardines del Sur', 'Sm 23 Mz 17 Lt 05', '2025-02-02 05:00:00', NULL),
+(39, 4, 9, 1, 'Matenimiento', 'Infraestructura de educativos', '75.00', 'Colinas de la Paz', 'Sm 12 Mz 08 Lt 01', '2024-11-28 05:00:00', NULL),
+(40, 4, 1, 3, 'Matenimiento', 'Infraestructura de educativos', '30.00', 'Rincón del Valle', 'Sm 31 Mz 22 Lt 07', '2025-01-20 05:00:00', NULL),
+(41, 5, 7, 1, 'Matenimiento', 'Infraestructura de educativos', '85.00', 'Las Haciendas', 'Sm 14 Mz 34 Lt 02', '2025-02-15 05:00:00', NULL),
+(42, 1, 8, 2, 'Matenimiento', 'Infraestructura de educativos', '90.00', 'El Refugio', 'Sm 05 Mz 11 Lt 06', '2024-12-09 05:00:00', NULL),
+(43, 2, 5, 2, 'Mantenimiento', 'Infraestructura de bibliotecas', '20.00', 'Bosque Real', 'Sm 20 Mz 15 Lt 03', '2025-01-30 05:00:00', NULL),
+(44, 3, 3, 3, 'Mantenimiento', 'Infraestructura de bibliotecas', '75.00', 'Villas del Norte', 'Sm 12 Mz 17 Lt 09', '2024-12-14 05:00:00', NULL),
+(45, 4, 6, 1, 'Mantenimiento', 'Infraestructura de bibliotecas', '40.00', 'Lomas del Lago', 'Sm 18 Mz 13 Lt 07', '2025-02-05 05:00:00', NULL),
+(46, 5, 8, 2, 'Mantenimiento', 'Infraestructura de bibliotecas', '95.00', 'Paseos del Sol', 'Sm 09 Mz 30 Lt 01', '2024-11-22 05:00:00', NULL),
+(47, 6, 2, 3, 'Mantenimiento', 'Infraestructura de bibliotecas', '10.00', 'Colinas Verdes', 'Sm 07 Mz 22 Lt 08', '2025-01-18 05:00:00', NULL),
+(48, 7, 7, 1, 'Mantenimiento', 'Infraestructura de bibliotecas', '100.00', 'Puerta Dorada', 'Sm 16 Mz 35 Lt 05', '2025-02-10 05:00:00', NULL),
+(49, 1, 9, 3, 'Mantenimiento', 'Infraestructura de bibliotecas', '85.00', 'Horizontes del Río', 'Sm 25 Mz 08 Lt 06', '2024-12-08 05:00:00', NULL),
+(50, 5, 4, 1, 'Mantenimiento', 'Infraestructura de mercados', '25.00', 'Altos del Mirador', 'Sm 14 Mz 20 Lt 04', '2025-01-07 05:00:00', NULL),
+(51, 6, 1, 2, 'Mantenimiento', 'Infraestructura de mercados', '90.00', 'Vistas del Valle', 'Sm 21 Mz 15 Lt 07', '2024-12-19 05:00:00', NULL),
+(52, 1, 5, 3, 'Mantenimiento', 'Infraestructura de mercados', '10.00', 'Los Encinos', 'Sm 18 Mz 09 Lt 03', '2025-02-14 05:00:00', NULL),
+(53, 2, 6, 2, 'Mantenimiento', 'Infraestructura de mercados', '80.00', 'La Primavera', 'Sm 07 Mz 13 Lt 01', '2024-11-21 05:00:00', NULL),
+(54, 3, 8, 3, 'Mantenimiento', 'Infraestructura de mercados', '15.00', 'Monteverde', 'Sm 09 Mz 25 Lt 05', '2025-01-13 05:00:00', NULL),
+(55, 4, 7, 1, 'Mantenimiento', 'Infraestructura de mercados', '30.00', 'Bosques del Norte', 'Sm 31 Mz 10 Lt 09', '2025-02-18 05:00:00', NULL),
+(56, 5, 9, 2, 'Mantenimiento', 'Infraestructura de mercados', '95.00', 'Puerta de Hierro', 'Sm 12 Mz 17 Lt 06', '2024-12-10 05:00:00', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `programassociales`
+-- Estructura de tabla para la tabla `programassociales`
 --
 
 CREATE TABLE `programassociales` (
@@ -818,7 +943,7 @@ CREATE TABLE `programassociales` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `registrousuarios`
+-- Estructura de tabla para la tabla `registrousuarios`
 --
 
 CREATE TABLE `registrousuarios` (
@@ -830,7 +955,7 @@ CREATE TABLE `registrousuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `registrousuarios`
+-- Volcado de datos para la tabla `registrousuarios`
 --
 
 INSERT INTO `registrousuarios` (`ID`, `Nombre`, `Apellidos`, `Email`, `Contraseña`) VALUES
@@ -839,18 +964,13 @@ INSERT INTO `registrousuarios` (`ID`, `Nombre`, `Apellidos`, `Email`, `Contrase�
 (3, 'domi', '2', 'hpp@gmail.com', '$2y$10$lVfs68oFdvE.f/cSSUTKtuuEiqelpjvGpEGOKg1n7LX5AMyclbga2'),
 (4, 'frida', 'lara', 'fridalara@gmail.com', '$2y$10$uJhlGykbAmEO7gQHn58DIe/ocOAKk6.gYjw3c2mqdZJ2X.mmQdlJO'),
 (5, 'arca', 'dummy', 'arca@gmail.com', '$2y$10$E9LDTMQF94hYW0Rd1tNyYeHl6SD52FFEswvtwGL9JhREbsCNqUKxS'),
-(6, 'ivan', 'meraz', 'pataponivan@gmail.com', '$2y$10$a7Cz3qfgjJ58fWp2W//QD.aWp2k06DdDBVEeYIBhbNTkSpMZ9wnFO'),
-(7, 'luis', 'mendoza', 'luis.mendoza@gmail.com', '$2y$10$JHLhlbXeH9Yv07L1EO3z/eBQpvh1HpCHqwNj/AfFjcy...'),
-(8, 'carla', 'rodriguez', 'carla.rodriguez@gmail.com', '$2y$10$K8ZnMLxF2JpjL9T1CWV8HuQxL9HtlRpFtDQpVAIo8zX...'),
-(9, 'juan', 'gomez', 'juan.gomez@gmail.com', '$2y$10$N9Owl2fH3JzkW4T1RWY8JuABlr3ZtUpJqGOPzFAo5FX...'),
-(10, 'asd', 'asd', 'asd123@gmail.com', '$2y$10$vTYeu0kFX1STQlmT5KgQuuoB/GVLb53XqU.xssSbro8mLAkhd.Q.2'),
-(11, 'Francisco ', 'Hidalgo', 'francantonihidalgo@gmail.com', '$2y$10$R3IJ6i7FCE3VkClf52w9duYbyizy4jol.QPKznWD3/H9.y.YHebBa'),
-(12, 'Franco ', 'Farfay', 'franco@gmail.com', '$2y$10$L9UV7yZhhPm1REIJjg.ouehPK0OVbLHc60dCqhrcxNDnJVB9Qbf/m');
+(6, 'Francisco Antonio', 'Hidalgo Alvarado', 'francisco.hidalgo.alvarado@gmail.com', '$2y$10$R3BEBQlhE/n.Jcgy0Y9IQ.GQPRG4geeNdaljJlt86WL9FKWcAdLCi'),
+(7, 'Francois', 'Hidalgue', 'francantonihidalgo@gmail.com', '$2y$10$XIQf4.JA1AszQ0i0gNVtBO2VPimxC3gQEViQJzd8cNK5ebHGw6/6S');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `reporte_banos_publicos`
+-- Estructura de tabla para la tabla `reporte_banos_publicos`
 --
 
 CREATE TABLE `reporte_banos_publicos` (
@@ -867,7 +987,7 @@ CREATE TABLE `reporte_banos_publicos` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `reporte_giros`
+-- Estructura de tabla para la tabla `reporte_giros`
 --
 
 CREATE TABLE `reporte_giros` (
@@ -891,7 +1011,7 @@ CREATE TABLE `reporte_giros` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `reporte_negocios`
+-- Estructura de tabla para la tabla `reporte_negocios`
 --
 
 CREATE TABLE `reporte_negocios` (
@@ -912,7 +1032,7 @@ CREATE TABLE `reporte_negocios` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `reporte_obras`
+-- Estructura de tabla para la tabla `reporte_obras`
 --
 
 CREATE TABLE `reporte_obras` (
@@ -921,7 +1041,7 @@ CREATE TABLE `reporte_obras` (
   `DepartamentoID` int(11) NOT NULL,
   `FormularioID` int(11) NOT NULL,
   `Obra` varchar(255) NOT NULL,
-  `UnidadTerritorial` varchar(255) NOT NULL,
+  `UnidadTerritorial` int(11) DEFAULT NULL,
   `PermisoLicencia` varchar(50) NOT NULL,
   `TipoReporte` enum('fisico','financiero') NOT NULL,
   `DetallesAvanceFisico` text DEFAULT NULL,
@@ -936,7 +1056,7 @@ CREATE TABLE `reporte_obras` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `subdireccion_de_ordenamiento_urbano_y_movilidad`
+-- Estructura de tabla para la tabla `subdireccion_de_ordenamiento_urbano_y_movilidad`
 --
 
 CREATE TABLE `subdireccion_de_ordenamiento_urbano_y_movilidad` (
@@ -955,7 +1075,7 @@ CREATE TABLE `subdireccion_de_ordenamiento_urbano_y_movilidad` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `subdireccion_de_prevencion_del_delito`
+-- Estructura de tabla para la tabla `subdireccion_de_prevencion_del_delito`
 --
 
 CREATE TABLE `subdireccion_de_prevencion_del_delito` (
@@ -981,7 +1101,7 @@ CREATE TABLE `subdireccion_de_prevencion_del_delito` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `transformando_en_comunidad`
+-- Estructura de tabla para la tabla `transformando_en_comunidad`
 --
 
 CREATE TABLE `transformando_en_comunidad` (
@@ -1009,7 +1129,7 @@ CREATE TABLE `transformando_en_comunidad` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usuariodepartamentos`
+-- Estructura de tabla para la tabla `usuariodepartamentos`
 --
 
 CREATE TABLE `usuariodepartamentos` (
@@ -1018,7 +1138,7 @@ CREATE TABLE `usuariodepartamentos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `usuariodepartamentos`
+-- Volcado de datos para la tabla `usuariodepartamentos`
 --
 
 INSERT INTO `usuariodepartamentos` (`UsuarioID`, `DepartamentoID`) VALUES
@@ -1287,16 +1407,14 @@ INSERT INTO `usuariodepartamentos` (`UsuarioID`, `DepartamentoID`) VALUES
 (4, 198),
 (5, 1),
 (6, 1),
-(10, 4),
-(11, 1),
-(12, 197);
+(7, 1);
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `apoyo_para_el_bienestar_2025`
+-- Indices de la tabla `apoyo_para_el_bienestar_2025`
 --
 ALTER TABLE `apoyo_para_el_bienestar_2025`
   ADD PRIMARY KEY (`ID`),
@@ -1305,7 +1423,13 @@ ALTER TABLE `apoyo_para_el_bienestar_2025`
   ADD KEY `FormularioID` (`FormularioID`);
 
 --
--- Indexes for table `construyendo_salud_en_comunidad`
+-- Indices de la tabla `colonias`
+--
+ALTER TABLE `colonias`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indices de la tabla `construyendo_salud_en_comunidad`
 --
 ALTER TABLE `construyendo_salud_en_comunidad`
   ADD PRIMARY KEY (`ID`),
@@ -1314,7 +1438,7 @@ ALTER TABLE `construyendo_salud_en_comunidad`
   ADD KEY `FormularioID` (`FormularioID`);
 
 --
--- Indexes for table `cuidar_y_ser_cuidado_para_el_bienestar_2025`
+-- Indices de la tabla `cuidar_y_ser_cuidado_para_el_bienestar_2025`
 --
 ALTER TABLE `cuidar_y_ser_cuidado_para_el_bienestar_2025`
   ADD PRIMARY KEY (`ID`),
@@ -1323,20 +1447,20 @@ ALTER TABLE `cuidar_y_ser_cuidado_para_el_bienestar_2025`
   ADD KEY `FormularioID` (`FormularioID`);
 
 --
--- Indexes for table `departamentoprogramas`
+-- Indices de la tabla `departamentoprogramas`
 --
 ALTER TABLE `departamentoprogramas`
   ADD PRIMARY KEY (`DepartamentoID`,`ProgramaID`),
   ADD KEY `ProgramaID` (`ProgramaID`);
 
 --
--- Indexes for table `departamentos`
+-- Indices de la tabla `departamentos`
 --
 ALTER TABLE `departamentos`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indexes for table `formularios`
+-- Indices de la tabla `formularios`
 --
 ALTER TABLE `formularios`
   ADD PRIMARY KEY (`ID`),
@@ -1345,7 +1469,7 @@ ALTER TABLE `formularios`
   ADD KEY `UsuarioID` (`UsuarioID`);
 
 --
--- Indexes for table `fortalecimiento_para_el_cuidado_de_las_infancias`
+-- Indices de la tabla `fortalecimiento_para_el_cuidado_de_las_infancias`
 --
 ALTER TABLE `fortalecimiento_para_el_cuidado_de_las_infancias`
   ADD PRIMARY KEY (`ID`),
@@ -1354,7 +1478,7 @@ ALTER TABLE `fortalecimiento_para_el_cuidado_de_las_infancias`
   ADD KEY `FormularioID` (`FormularioID`);
 
 --
--- Indexes for table `judpanteones`
+-- Indices de la tabla `judpanteones`
 --
 ALTER TABLE `judpanteones`
   ADD PRIMARY KEY (`ID`),
@@ -1363,7 +1487,7 @@ ALTER TABLE `judpanteones`
   ADD KEY `FormularioID` (`FormularioID`);
 
 --
--- Indexes for table `jud_colonias_y_asentamientos_humanos_irregulares`
+-- Indices de la tabla `jud_colonias_y_asentamientos_humanos_irregulares`
 --
 ALTER TABLE `jud_colonias_y_asentamientos_humanos_irregulares`
   ADD PRIMARY KEY (`ID`),
@@ -1372,7 +1496,7 @@ ALTER TABLE `jud_colonias_y_asentamientos_humanos_irregulares`
   ADD KEY `FormularioID` (`FormularioID`);
 
 --
--- Indexes for table `jud_de_centros_deportivos`
+-- Indices de la tabla `jud_de_centros_deportivos`
 --
 ALTER TABLE `jud_de_centros_deportivos`
   ADD PRIMARY KEY (`ID`),
@@ -1381,7 +1505,7 @@ ALTER TABLE `jud_de_centros_deportivos`
   ADD KEY `FormularioID` (`FormularioID`);
 
 --
--- Indexes for table `jud_de_control_operativo_policial`
+-- Indices de la tabla `jud_de_control_operativo_policial`
 --
 ALTER TABLE `jud_de_control_operativo_policial`
   ADD PRIMARY KEY (`ID`),
@@ -1390,7 +1514,7 @@ ALTER TABLE `jud_de_control_operativo_policial`
   ADD KEY `FormularioID` (`FormularioID`);
 
 --
--- Indexes for table `jud_de_incidencia_y_estadistica_delictiva`
+-- Indices de la tabla `jud_de_incidencia_y_estadistica_delictiva`
 --
 ALTER TABLE `jud_de_incidencia_y_estadistica_delictiva`
   ADD PRIMARY KEY (`ID`),
@@ -1399,7 +1523,7 @@ ALTER TABLE `jud_de_incidencia_y_estadistica_delictiva`
   ADD KEY `FormularioID` (`FormularioID`);
 
 --
--- Indexes for table `jud_de_seguridad_ciudadana_y_de_transito`
+-- Indices de la tabla `jud_de_seguridad_ciudadana_y_de_transito`
 --
 ALTER TABLE `jud_de_seguridad_ciudadana_y_de_transito`
   ADD PRIMARY KEY (`ID`),
@@ -1408,7 +1532,7 @@ ALTER TABLE `jud_de_seguridad_ciudadana_y_de_transito`
   ADD KEY `FormularioID` (`FormularioID`);
 
 --
--- Indexes for table `jud_de_tianguis_y_via_publica`
+-- Indices de la tabla `jud_de_tianguis_y_via_publica`
 --
 ALTER TABLE `jud_de_tianguis_y_via_publica`
   ADD PRIMARY KEY (`ID`),
@@ -1417,7 +1541,7 @@ ALTER TABLE `jud_de_tianguis_y_via_publica`
   ADD KEY `FormularioID` (`FormularioID`);
 
 --
--- Indexes for table `juventudes_en_transformacion`
+-- Indices de la tabla `juventudes_en_transformacion`
 --
 ALTER TABLE `juventudes_en_transformacion`
   ADD PRIMARY KEY (`ID`),
@@ -1426,7 +1550,7 @@ ALTER TABLE `juventudes_en_transformacion`
   ADD KEY `FormularioID` (`FormularioID`);
 
 --
--- Indexes for table `mantenimiento_menor`
+-- Indices de la tabla `mantenimiento_menor`
 --
 ALTER TABLE `mantenimiento_menor`
   ADD PRIMARY KEY (`ID`),
@@ -1435,19 +1559,19 @@ ALTER TABLE `mantenimiento_menor`
   ADD KEY `FormularioID` (`FormularioID`);
 
 --
--- Indexes for table `programassociales`
+-- Indices de la tabla `programassociales`
 --
 ALTER TABLE `programassociales`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indexes for table `registrousuarios`
+-- Indices de la tabla `registrousuarios`
 --
 ALTER TABLE `registrousuarios`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indexes for table `reporte_banos_publicos`
+-- Indices de la tabla `reporte_banos_publicos`
 --
 ALTER TABLE `reporte_banos_publicos`
   ADD PRIMARY KEY (`ID`),
@@ -1456,7 +1580,7 @@ ALTER TABLE `reporte_banos_publicos`
   ADD KEY `FormularioID` (`FormularioID`);
 
 --
--- Indexes for table `reporte_giros`
+-- Indices de la tabla `reporte_giros`
 --
 ALTER TABLE `reporte_giros`
   ADD PRIMARY KEY (`ID`),
@@ -1465,7 +1589,7 @@ ALTER TABLE `reporte_giros`
   ADD KEY `FormularioID` (`FormularioID`);
 
 --
--- Indexes for table `reporte_negocios`
+-- Indices de la tabla `reporte_negocios`
 --
 ALTER TABLE `reporte_negocios`
   ADD PRIMARY KEY (`ID`),
@@ -1474,16 +1598,17 @@ ALTER TABLE `reporte_negocios`
   ADD KEY `FormularioID` (`FormularioID`);
 
 --
--- Indexes for table `reporte_obras`
+-- Indices de la tabla `reporte_obras`
 --
 ALTER TABLE `reporte_obras`
   ADD PRIMARY KEY (`ID`),
   ADD KEY `UsuarioID` (`UsuarioID`),
   ADD KEY `DepartamentoID` (`DepartamentoID`),
-  ADD KEY `FormularioID` (`FormularioID`);
+  ADD KEY `FormularioID` (`FormularioID`),
+  ADD KEY `fk_colonia` (`UnidadTerritorial`);
 
 --
--- Indexes for table `subdireccion_de_ordenamiento_urbano_y_movilidad`
+-- Indices de la tabla `subdireccion_de_ordenamiento_urbano_y_movilidad`
 --
 ALTER TABLE `subdireccion_de_ordenamiento_urbano_y_movilidad`
   ADD PRIMARY KEY (`ID`),
@@ -1492,7 +1617,7 @@ ALTER TABLE `subdireccion_de_ordenamiento_urbano_y_movilidad`
   ADD KEY `FormularioID` (`FormularioID`);
 
 --
--- Indexes for table `subdireccion_de_prevencion_del_delito`
+-- Indices de la tabla `subdireccion_de_prevencion_del_delito`
 --
 ALTER TABLE `subdireccion_de_prevencion_del_delito`
   ADD PRIMARY KEY (`ID`),
@@ -1501,7 +1626,7 @@ ALTER TABLE `subdireccion_de_prevencion_del_delito`
   ADD KEY `FormularioID` (`FormularioID`);
 
 --
--- Indexes for table `transformando_en_comunidad`
+-- Indices de la tabla `transformando_en_comunidad`
 --
 ALTER TABLE `transformando_en_comunidad`
   ADD PRIMARY KEY (`ID`),
@@ -1510,160 +1635,166 @@ ALTER TABLE `transformando_en_comunidad`
   ADD KEY `FormularioID` (`FormularioID`);
 
 --
--- Indexes for table `usuariodepartamentos`
+-- Indices de la tabla `usuariodepartamentos`
 --
 ALTER TABLE `usuariodepartamentos`
   ADD PRIMARY KEY (`UsuarioID`,`DepartamentoID`),
   ADD KEY `DepartamentoID` (`DepartamentoID`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `apoyo_para_el_bienestar_2025`
+-- AUTO_INCREMENT de la tabla `apoyo_para_el_bienestar_2025`
 --
 ALTER TABLE `apoyo_para_el_bienestar_2025`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `construyendo_salud_en_comunidad`
+-- AUTO_INCREMENT de la tabla `colonias`
+--
+ALTER TABLE `colonias`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=180;
+
+--
+-- AUTO_INCREMENT de la tabla `construyendo_salud_en_comunidad`
 --
 ALTER TABLE `construyendo_salud_en_comunidad`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `cuidar_y_ser_cuidado_para_el_bienestar_2025`
+-- AUTO_INCREMENT de la tabla `cuidar_y_ser_cuidado_para_el_bienestar_2025`
 --
 ALTER TABLE `cuidar_y_ser_cuidado_para_el_bienestar_2025`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 
 --
--- AUTO_INCREMENT for table `formularios`
+-- AUTO_INCREMENT de la tabla `formularios`
 --
 ALTER TABLE `formularios`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `fortalecimiento_para_el_cuidado_de_las_infancias`
+-- AUTO_INCREMENT de la tabla `fortalecimiento_para_el_cuidado_de_las_infancias`
 --
 ALTER TABLE `fortalecimiento_para_el_cuidado_de_las_infancias`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `judpanteones`
+-- AUTO_INCREMENT de la tabla `judpanteones`
 --
 ALTER TABLE `judpanteones`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `jud_colonias_y_asentamientos_humanos_irregulares`
+-- AUTO_INCREMENT de la tabla `jud_colonias_y_asentamientos_humanos_irregulares`
 --
 ALTER TABLE `jud_colonias_y_asentamientos_humanos_irregulares`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `jud_de_centros_deportivos`
+-- AUTO_INCREMENT de la tabla `jud_de_centros_deportivos`
 --
 ALTER TABLE `jud_de_centros_deportivos`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `jud_de_control_operativo_policial`
+-- AUTO_INCREMENT de la tabla `jud_de_control_operativo_policial`
 --
 ALTER TABLE `jud_de_control_operativo_policial`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `jud_de_incidencia_y_estadistica_delictiva`
+-- AUTO_INCREMENT de la tabla `jud_de_incidencia_y_estadistica_delictiva`
 --
 ALTER TABLE `jud_de_incidencia_y_estadistica_delictiva`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `jud_de_seguridad_ciudadana_y_de_transito`
+-- AUTO_INCREMENT de la tabla `jud_de_seguridad_ciudadana_y_de_transito`
 --
 ALTER TABLE `jud_de_seguridad_ciudadana_y_de_transito`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `jud_de_tianguis_y_via_publica`
+-- AUTO_INCREMENT de la tabla `jud_de_tianguis_y_via_publica`
 --
 ALTER TABLE `jud_de_tianguis_y_via_publica`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `juventudes_en_transformacion`
+-- AUTO_INCREMENT de la tabla `juventudes_en_transformacion`
 --
 ALTER TABLE `juventudes_en_transformacion`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `mantenimiento_menor`
+-- AUTO_INCREMENT de la tabla `mantenimiento_menor`
 --
 ALTER TABLE `mantenimiento_menor`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=201;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=154;
 
 --
--- AUTO_INCREMENT for table `programassociales`
+-- AUTO_INCREMENT de la tabla `programassociales`
 --
 ALTER TABLE `programassociales`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `registrousuarios`
+-- AUTO_INCREMENT de la tabla `registrousuarios`
 --
 ALTER TABLE `registrousuarios`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `reporte_banos_publicos`
+-- AUTO_INCREMENT de la tabla `reporte_banos_publicos`
 --
 ALTER TABLE `reporte_banos_publicos`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `reporte_giros`
+-- AUTO_INCREMENT de la tabla `reporte_giros`
 --
 ALTER TABLE `reporte_giros`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `reporte_negocios`
+-- AUTO_INCREMENT de la tabla `reporte_negocios`
 --
 ALTER TABLE `reporte_negocios`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `reporte_obras`
+-- AUTO_INCREMENT de la tabla `reporte_obras`
 --
 ALTER TABLE `reporte_obras`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `subdireccion_de_ordenamiento_urbano_y_movilidad`
+-- AUTO_INCREMENT de la tabla `subdireccion_de_ordenamiento_urbano_y_movilidad`
 --
 ALTER TABLE `subdireccion_de_ordenamiento_urbano_y_movilidad`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `subdireccion_de_prevencion_del_delito`
+-- AUTO_INCREMENT de la tabla `subdireccion_de_prevencion_del_delito`
 --
 ALTER TABLE `subdireccion_de_prevencion_del_delito`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `transformando_en_comunidad`
+-- AUTO_INCREMENT de la tabla `transformando_en_comunidad`
 --
 ALTER TABLE `transformando_en_comunidad`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- Constraints for dumped tables
+-- Restricciones para tablas volcadas
 --
 
 --
--- Constraints for table `apoyo_para_el_bienestar_2025`
+-- Filtros para la tabla `apoyo_para_el_bienestar_2025`
 --
 ALTER TABLE `apoyo_para_el_bienestar_2025`
   ADD CONSTRAINT `apoyo_para_el_bienestar_2025_ibfk_1` FOREIGN KEY (`UsuarioID`) REFERENCES `registrousuarios` (`ID`) ON DELETE CASCADE,
@@ -1671,7 +1802,7 @@ ALTER TABLE `apoyo_para_el_bienestar_2025`
   ADD CONSTRAINT `apoyo_para_el_bienestar_2025_ibfk_3` FOREIGN KEY (`FormularioID`) REFERENCES `formularios` (`ID`) ON DELETE CASCADE;
 
 --
--- Constraints for table `construyendo_salud_en_comunidad`
+-- Filtros para la tabla `construyendo_salud_en_comunidad`
 --
 ALTER TABLE `construyendo_salud_en_comunidad`
   ADD CONSTRAINT `construyendo_salud_en_comunidad_ibfk_1` FOREIGN KEY (`UsuarioID`) REFERENCES `registrousuarios` (`ID`) ON DELETE CASCADE,
@@ -1679,7 +1810,7 @@ ALTER TABLE `construyendo_salud_en_comunidad`
   ADD CONSTRAINT `construyendo_salud_en_comunidad_ibfk_3` FOREIGN KEY (`FormularioID`) REFERENCES `formularios` (`ID`) ON DELETE CASCADE;
 
 --
--- Constraints for table `cuidar_y_ser_cuidado_para_el_bienestar_2025`
+-- Filtros para la tabla `cuidar_y_ser_cuidado_para_el_bienestar_2025`
 --
 ALTER TABLE `cuidar_y_ser_cuidado_para_el_bienestar_2025`
   ADD CONSTRAINT `cuidar_y_ser_cuidado_para_el_bienestar_2025_ibfk_1` FOREIGN KEY (`UsuarioID`) REFERENCES `registrousuarios` (`ID`) ON DELETE CASCADE,
@@ -1687,21 +1818,21 @@ ALTER TABLE `cuidar_y_ser_cuidado_para_el_bienestar_2025`
   ADD CONSTRAINT `cuidar_y_ser_cuidado_para_el_bienestar_2025_ibfk_3` FOREIGN KEY (`FormularioID`) REFERENCES `formularios` (`ID`) ON DELETE CASCADE;
 
 --
--- Constraints for table `departamentoprogramas`
+-- Filtros para la tabla `departamentoprogramas`
 --
 ALTER TABLE `departamentoprogramas`
   ADD CONSTRAINT `departamentoprogramas_ibfk_1` FOREIGN KEY (`DepartamentoID`) REFERENCES `departamentos` (`ID`),
   ADD CONSTRAINT `departamentoprogramas_ibfk_2` FOREIGN KEY (`ProgramaID`) REFERENCES `programassociales` (`ID`);
 
 --
--- Constraints for table `formularios`
+-- Filtros para la tabla `formularios`
 --
 ALTER TABLE `formularios`
   ADD CONSTRAINT `formularios_ibfk_1` FOREIGN KEY (`DepartamentoID`) REFERENCES `departamentos` (`ID`) ON DELETE CASCADE,
   ADD CONSTRAINT `formularios_ibfk_2` FOREIGN KEY (`UsuarioID`) REFERENCES `registrousuarios` (`ID`) ON DELETE CASCADE;
 
 --
--- Constraints for table `fortalecimiento_para_el_cuidado_de_las_infancias`
+-- Filtros para la tabla `fortalecimiento_para_el_cuidado_de_las_infancias`
 --
 ALTER TABLE `fortalecimiento_para_el_cuidado_de_las_infancias`
   ADD CONSTRAINT `fortalecimiento_para_el_cuidado_de_las_infancias_ibfk_1` FOREIGN KEY (`UsuarioID`) REFERENCES `registrousuarios` (`ID`) ON DELETE CASCADE,
@@ -1709,7 +1840,7 @@ ALTER TABLE `fortalecimiento_para_el_cuidado_de_las_infancias`
   ADD CONSTRAINT `fortalecimiento_para_el_cuidado_de_las_infancias_ibfk_3` FOREIGN KEY (`FormularioID`) REFERENCES `formularios` (`ID`) ON DELETE CASCADE;
 
 --
--- Constraints for table `judpanteones`
+-- Filtros para la tabla `judpanteones`
 --
 ALTER TABLE `judpanteones`
   ADD CONSTRAINT `judpanteones_ibfk_1` FOREIGN KEY (`UsuarioID`) REFERENCES `registrousuarios` (`ID`) ON DELETE CASCADE,
@@ -1717,7 +1848,7 @@ ALTER TABLE `judpanteones`
   ADD CONSTRAINT `judpanteones_ibfk_3` FOREIGN KEY (`FormularioID`) REFERENCES `formularios` (`ID`) ON DELETE CASCADE;
 
 --
--- Constraints for table `jud_colonias_y_asentamientos_humanos_irregulares`
+-- Filtros para la tabla `jud_colonias_y_asentamientos_humanos_irregulares`
 --
 ALTER TABLE `jud_colonias_y_asentamientos_humanos_irregulares`
   ADD CONSTRAINT `jud_colonias_y_asentamientos_humanos_irregulares_ibfk_1` FOREIGN KEY (`UsuarioID`) REFERENCES `registrousuarios` (`ID`) ON DELETE CASCADE,
@@ -1725,7 +1856,7 @@ ALTER TABLE `jud_colonias_y_asentamientos_humanos_irregulares`
   ADD CONSTRAINT `jud_colonias_y_asentamientos_humanos_irregulares_ibfk_3` FOREIGN KEY (`FormularioID`) REFERENCES `formularios` (`ID`) ON DELETE CASCADE;
 
 --
--- Constraints for table `jud_de_centros_deportivos`
+-- Filtros para la tabla `jud_de_centros_deportivos`
 --
 ALTER TABLE `jud_de_centros_deportivos`
   ADD CONSTRAINT `jud_de_centros_deportivos_ibfk_1` FOREIGN KEY (`UsuarioID`) REFERENCES `registrousuarios` (`ID`) ON DELETE CASCADE,
@@ -1733,7 +1864,7 @@ ALTER TABLE `jud_de_centros_deportivos`
   ADD CONSTRAINT `jud_de_centros_deportivos_ibfk_3` FOREIGN KEY (`FormularioID`) REFERENCES `formularios` (`ID`) ON DELETE CASCADE;
 
 --
--- Constraints for table `jud_de_control_operativo_policial`
+-- Filtros para la tabla `jud_de_control_operativo_policial`
 --
 ALTER TABLE `jud_de_control_operativo_policial`
   ADD CONSTRAINT `jud_de_control_operativo_policial_ibfk_1` FOREIGN KEY (`UsuarioID`) REFERENCES `registrousuarios` (`ID`) ON DELETE CASCADE,
@@ -1741,7 +1872,7 @@ ALTER TABLE `jud_de_control_operativo_policial`
   ADD CONSTRAINT `jud_de_control_operativo_policial_ibfk_3` FOREIGN KEY (`FormularioID`) REFERENCES `formularios` (`ID`) ON DELETE CASCADE;
 
 --
--- Constraints for table `jud_de_incidencia_y_estadistica_delictiva`
+-- Filtros para la tabla `jud_de_incidencia_y_estadistica_delictiva`
 --
 ALTER TABLE `jud_de_incidencia_y_estadistica_delictiva`
   ADD CONSTRAINT `jud_de_incidencia_y_estadistica_delictiva_ibfk_1` FOREIGN KEY (`UsuarioID`) REFERENCES `registrousuarios` (`ID`) ON DELETE CASCADE,
@@ -1749,7 +1880,7 @@ ALTER TABLE `jud_de_incidencia_y_estadistica_delictiva`
   ADD CONSTRAINT `jud_de_incidencia_y_estadistica_delictiva_ibfk_3` FOREIGN KEY (`FormularioID`) REFERENCES `formularios` (`ID`) ON DELETE CASCADE;
 
 --
--- Constraints for table `jud_de_seguridad_ciudadana_y_de_transito`
+-- Filtros para la tabla `jud_de_seguridad_ciudadana_y_de_transito`
 --
 ALTER TABLE `jud_de_seguridad_ciudadana_y_de_transito`
   ADD CONSTRAINT `jud_de_seguridad_ciudadana_y_de_transito_ibfk_1` FOREIGN KEY (`UsuarioID`) REFERENCES `registrousuarios` (`ID`) ON DELETE CASCADE,
@@ -1757,7 +1888,7 @@ ALTER TABLE `jud_de_seguridad_ciudadana_y_de_transito`
   ADD CONSTRAINT `jud_de_seguridad_ciudadana_y_de_transito_ibfk_3` FOREIGN KEY (`FormularioID`) REFERENCES `formularios` (`ID`) ON DELETE CASCADE;
 
 --
--- Constraints for table `jud_de_tianguis_y_via_publica`
+-- Filtros para la tabla `jud_de_tianguis_y_via_publica`
 --
 ALTER TABLE `jud_de_tianguis_y_via_publica`
   ADD CONSTRAINT `jud_de_tianguis_y_via_publica_ibfk_1` FOREIGN KEY (`UsuarioID`) REFERENCES `registrousuarios` (`ID`) ON DELETE CASCADE,
@@ -1765,7 +1896,7 @@ ALTER TABLE `jud_de_tianguis_y_via_publica`
   ADD CONSTRAINT `jud_de_tianguis_y_via_publica_ibfk_3` FOREIGN KEY (`FormularioID`) REFERENCES `formularios` (`ID`) ON DELETE CASCADE;
 
 --
--- Constraints for table `juventudes_en_transformacion`
+-- Filtros para la tabla `juventudes_en_transformacion`
 --
 ALTER TABLE `juventudes_en_transformacion`
   ADD CONSTRAINT `juventudes_en_transformacion_ibfk_1` FOREIGN KEY (`UsuarioID`) REFERENCES `registrousuarios` (`ID`) ON DELETE CASCADE,
@@ -1773,7 +1904,7 @@ ALTER TABLE `juventudes_en_transformacion`
   ADD CONSTRAINT `juventudes_en_transformacion_ibfk_3` FOREIGN KEY (`FormularioID`) REFERENCES `formularios` (`ID`) ON DELETE CASCADE;
 
 --
--- Constraints for table `mantenimiento_menor`
+-- Filtros para la tabla `mantenimiento_menor`
 --
 ALTER TABLE `mantenimiento_menor`
   ADD CONSTRAINT `mantenimiento_menor_ibfk_1` FOREIGN KEY (`UsuarioID`) REFERENCES `registrousuarios` (`ID`) ON DELETE CASCADE,
@@ -1781,7 +1912,7 @@ ALTER TABLE `mantenimiento_menor`
   ADD CONSTRAINT `mantenimiento_menor_ibfk_3` FOREIGN KEY (`FormularioID`) REFERENCES `formularios` (`ID`) ON DELETE CASCADE;
 
 --
--- Constraints for table `reporte_banos_publicos`
+-- Filtros para la tabla `reporte_banos_publicos`
 --
 ALTER TABLE `reporte_banos_publicos`
   ADD CONSTRAINT `reporte_banos_publicos_ibfk_1` FOREIGN KEY (`UsuarioID`) REFERENCES `registrousuarios` (`ID`) ON DELETE CASCADE,
@@ -1789,7 +1920,7 @@ ALTER TABLE `reporte_banos_publicos`
   ADD CONSTRAINT `reporte_banos_publicos_ibfk_3` FOREIGN KEY (`FormularioID`) REFERENCES `formularios` (`ID`) ON DELETE CASCADE;
 
 --
--- Constraints for table `reporte_giros`
+-- Filtros para la tabla `reporte_giros`
 --
 ALTER TABLE `reporte_giros`
   ADD CONSTRAINT `reporte_giros_ibfk_1` FOREIGN KEY (`UsuarioID`) REFERENCES `registrousuarios` (`ID`) ON DELETE CASCADE,
@@ -1797,7 +1928,7 @@ ALTER TABLE `reporte_giros`
   ADD CONSTRAINT `reporte_giros_ibfk_3` FOREIGN KEY (`FormularioID`) REFERENCES `formularios` (`ID`) ON DELETE CASCADE;
 
 --
--- Constraints for table `reporte_negocios`
+-- Filtros para la tabla `reporte_negocios`
 --
 ALTER TABLE `reporte_negocios`
   ADD CONSTRAINT `reporte_negocios_ibfk_1` FOREIGN KEY (`UsuarioID`) REFERENCES `registrousuarios` (`ID`) ON DELETE CASCADE,
@@ -1805,15 +1936,16 @@ ALTER TABLE `reporte_negocios`
   ADD CONSTRAINT `reporte_negocios_ibfk_3` FOREIGN KEY (`FormularioID`) REFERENCES `formularios` (`ID`) ON DELETE CASCADE;
 
 --
--- Constraints for table `reporte_obras`
+-- Filtros para la tabla `reporte_obras`
 --
 ALTER TABLE `reporte_obras`
+  ADD CONSTRAINT `fk_colonia` FOREIGN KEY (`UnidadTerritorial`) REFERENCES `colonias` (`ID`) ON DELETE CASCADE,
   ADD CONSTRAINT `reporte_obras_ibfk_1` FOREIGN KEY (`UsuarioID`) REFERENCES `registrousuarios` (`ID`) ON DELETE CASCADE,
   ADD CONSTRAINT `reporte_obras_ibfk_2` FOREIGN KEY (`DepartamentoID`) REFERENCES `departamentos` (`ID`) ON DELETE CASCADE,
   ADD CONSTRAINT `reporte_obras_ibfk_3` FOREIGN KEY (`FormularioID`) REFERENCES `formularios` (`ID`) ON DELETE CASCADE;
 
 --
--- Constraints for table `subdireccion_de_ordenamiento_urbano_y_movilidad`
+-- Filtros para la tabla `subdireccion_de_ordenamiento_urbano_y_movilidad`
 --
 ALTER TABLE `subdireccion_de_ordenamiento_urbano_y_movilidad`
   ADD CONSTRAINT `subdireccion_de_ordenamiento_urbano_y_movilidad_ibfk_1` FOREIGN KEY (`UsuarioID`) REFERENCES `registrousuarios` (`ID`) ON DELETE CASCADE,
@@ -1821,7 +1953,7 @@ ALTER TABLE `subdireccion_de_ordenamiento_urbano_y_movilidad`
   ADD CONSTRAINT `subdireccion_de_ordenamiento_urbano_y_movilidad_ibfk_3` FOREIGN KEY (`FormularioID`) REFERENCES `formularios` (`ID`) ON DELETE CASCADE;
 
 --
--- Constraints for table `subdireccion_de_prevencion_del_delito`
+-- Filtros para la tabla `subdireccion_de_prevencion_del_delito`
 --
 ALTER TABLE `subdireccion_de_prevencion_del_delito`
   ADD CONSTRAINT `subdireccion_de_prevencion_del_delito_ibfk_1` FOREIGN KEY (`UsuarioID`) REFERENCES `registrousuarios` (`ID`) ON DELETE CASCADE,
@@ -1829,7 +1961,7 @@ ALTER TABLE `subdireccion_de_prevencion_del_delito`
   ADD CONSTRAINT `subdireccion_de_prevencion_del_delito_ibfk_3` FOREIGN KEY (`FormularioID`) REFERENCES `formularios` (`ID`) ON DELETE CASCADE;
 
 --
--- Constraints for table `transformando_en_comunidad`
+-- Filtros para la tabla `transformando_en_comunidad`
 --
 ALTER TABLE `transformando_en_comunidad`
   ADD CONSTRAINT `transformando_en_comunidad_ibfk_1` FOREIGN KEY (`UsuarioID`) REFERENCES `registrousuarios` (`ID`) ON DELETE CASCADE,
@@ -1837,7 +1969,7 @@ ALTER TABLE `transformando_en_comunidad`
   ADD CONSTRAINT `transformando_en_comunidad_ibfk_3` FOREIGN KEY (`FormularioID`) REFERENCES `formularios` (`ID`) ON DELETE CASCADE;
 
 --
--- Constraints for table `usuariodepartamentos`
+-- Filtros para la tabla `usuariodepartamentos`
 --
 ALTER TABLE `usuariodepartamentos`
   ADD CONSTRAINT `usuariodepartamentos_ibfk_1` FOREIGN KEY (`UsuarioID`) REFERENCES `registrousuarios` (`ID`),
