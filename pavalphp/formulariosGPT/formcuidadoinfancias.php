@@ -82,7 +82,7 @@ session_start();
 <body>
     <div class="container">
         <a href="javascript:history.back()" class="back-icon">
-            <i class="fas fa-arrow-left"></i> <!-- Ícono de Font Awesome -->
+            <i class="fas fa-arrow-left"></i>
         </a>
         <form class="miFormulario" action="">
             <div class="row">
@@ -102,16 +102,16 @@ session_start();
                     <div id="facilitadores" class="hidden" style="display: none;">
                         <h3>Facilitadores</h3>
                         <div class="form-group">
-                            <label for="name1">Persona médica:</label>
-                            <input type="text" id="name1" name="name1">
+                            <label for="persona-medica">Persona médica:</label>
+                            <input type="text" id="persona-medica" name="persona-medica">
                         </div>
                         <div class="form-group">
                             <label for="actividad">Actividad:</label>
                             <select id="actividad" name="actividad">
                                 <option value="">--Seleccione una actividad--</option>
-                                <option value="actividad1">Consulta médica</option>
-                                <option value="actividad2">Reposición de cita</option>
-                                <option value="actividad3">Urgencia</option>
+                                <option value="consulta-medica">Consulta médica</option>
+                                <option value="reposicion-cita">Reposición de cita</option>
+                                <option value="urgencia">Urgencia</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -129,9 +129,9 @@ session_start();
                             <label for="tperson">Persona representante:</label>
                             <select id="tperson" name="tperson">
                                 <option value="">Seleccione una persona</option>
-                                <option value="persona1">Coordinador</option>
-                                <option value="persona2">Integrante</option>
-                                <option value="persona3">Usuario</option>
+                                <option value="coordinador">Coordinador</option>
+                                <option value="integrante">Integrante</option>
+                                <option value="usuario">Usuario</option>
                             </select>
                         </div>
                     </div>
@@ -141,12 +141,12 @@ session_start();
                         <input type="text" id="nombre" name="nombre" required>
                     </div>
                     <div class="form-group">
-                        <label for="apellido">Apellido paterno:</label>
-                        <input type="text" id="apellido" name="apellido" required>
+                        <label for="apellidop">Apellido paterno:</label>
+                        <input type="text" id="apellidop" name="apellidop" required>
                     </div>
                     <div class="form-group">
-                        <label for="apellido2">Apellido materno:</label>
-                        <input type="text" id="apellido2" name="apellido2" required>
+                        <label for="apellidom">Apellido materno:</label>
+                        <input type="text" id="apellidom" name="apellidom" required>
                     </div>
                     <div class="form-group">
                         <label for="sexo">Sexo:</label>
@@ -158,7 +158,7 @@ session_start();
                     </div>
                     <div class="form-group">
                         <label for="telefono">Teléfono:</label>
-                        <input type="text" id="telefono" name="telefono">
+                        <input type="tel" id="telefono" name="telefono" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890">
                     </div>
                     <div class="form-group">
                         <label for="fecha_nacimiento">Fecha de nacimiento:</label>
@@ -362,7 +362,6 @@ session_start();
                         <input type="text" id="direccion" name="direccion" readonly>
                     </div>
                     <button type="submit" class="btn">Enviar</button>
-                    <input type="button" value="Página anterior" onClick="history.go(-1);" class="btn2">
                 </div>
             </div>
         </form>
