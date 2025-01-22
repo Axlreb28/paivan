@@ -468,10 +468,10 @@ session_start();
 
 <?php
 // Datos de conexión
-$host = 'localhost';
-$dbname = 'tlalpan';
-$user = 'root';
-$password = '';
+$host = 'indicadorestlalpan.mx';
+$dbname = 'tlalpandb';
+$user = 'tlalpan';
+$password = 'o3NvcMy5#8Nhrco%';
 
 // Conexión a la base de datos
 try {

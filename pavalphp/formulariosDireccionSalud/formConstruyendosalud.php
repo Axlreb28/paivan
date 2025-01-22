@@ -74,7 +74,7 @@ session_start();
         <a href="javascript:history.back()" class="back-icon">
             <i class="fas fa-arrow-left"></i> <!-- Ícono de Font Awesome -->
         </a>
-        <form class="miFormulario" action="">
+        <form class="miFormulario" action="procesar_formulario.php" method="POST">
             <div class="row">
                 <div class="column">
                     <h2 class="title">Construyendo salud en comunidad</h2>
@@ -327,6 +327,75 @@ session_start();
 </html>
 
 
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Seleccionar el formulario
+        const formulario = document.querySelector(".miFormulario");
+
+        // Añadir evento para manejar el envío del formulario
+        formulario.addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevenir el envío por defecto
+
+            // Validar campos requeridos
+            const actividad = document.getElementById("actividad").value.trim();
+            const nombre = document.getElementById("nombre").value.trim();
+            const apellido = document.getElementById("apellido").value.trim();
+            const apellido2 = document.getElementById("apellido2").value.trim();
+            const sexo = document.getElementById("sexo").value.trim();
+            const telefono = document.getElementById("telefono").value.trim();
+            const fechaNacimiento = document.getElementById("fecha_nacimiento").value.trim();
+            const colonia = document.getElementById("colonia").value.trim();
+            const ubicacion = document.getElementById("ubicacion").value.trim();
+            const direccion = document.getElementById("direccion").value.trim();
+
+            // Validar que los campos requeridos no estén vacíos
+            if (!actividad || !nombre || !apellido || !apellido2 || !sexo || !fechaNacimiento || !direccion) {
+                alert("Por favor, completa todos los campos requeridos.");
+                return;
+            }
+
+            // Validar formato de fecha
+            const fechaRegex = /^\d{4}-\d{2}-\d{2}$/; // Formato YYYY-MM-DD
+            if (!fechaRegex.test(fechaNacimiento)) {
+                alert("Por favor, ingresa una fecha de nacimiento válida (YYYY-MM-DD).");
+                return;
+            }
+
+            // Validar formato del teléfono (opcional, según tus necesidades)
+            const telefonoRegex = /^\d{10}$/; // Acepta solo números de 10 dígitos
+            if (telefono && !telefonoRegex.test(telefono)) {
+                alert("Por favor, ingresa un número de teléfono válido (10 dígitos).");
+                return;
+            }
+
+            // Crear objeto FormData para enviar los datos del formulario
+            const formData = new FormData(formulario);
+
+            // Enviar datos al servidor mediante fetch
+            fetch("formConstruyendosalud.php", {
+                method: "POST",
+                body: formData,
+            })
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error("Error en la respuesta del servidor.");
+                    }
+                    return response.text(); // Leer la respuesta como texto
+                })
+                .then((data) => {
+                    alert("Formulario enviado correctamente.");
+                    console.log("Respuesta del servidor:", data);
+                    formulario.reset(); // Reiniciar formulario tras éxito
+                })
+                .catch((error) => {
+                    alert("Ocurrió un error al enviar el formulario.");
+                    console.error("Error:", error);
+                });
+        });
+    });
+</script>
+
+
 <?php
 // Datos de conexión
 $host = 'localhost';
@@ -385,87 +454,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-<script>
-    document.querySelector('.miFormulario').addEventListener('submit', function(event) {
-        // Obtener los valores del formulario
-        let actividad = document.getElementById('actividad').value;
-        let nombre = document.getElementById('nombre').value;
-        let apellido = document.getElementById('apellido').value;
-        let apellido2 = document.getElementById('apellido2').value;
-        let sexo = document.getElementById('sexo').value;
-        let telefono = document.getElementById('telefono').value;
-        let fechaNacimiento = document.getElementById('fecha_nacimiento').value;
-        let colonia = document.getElementById('colonia').value;
-        let ubicacion = document.getElementById('ubicacion').value;
-        let direccion = document.getElementById('direccion').value;
 
-        // Validaciones
-        if (!actividad) {
-            alert('Por favor, seleccione una actividad.');
-            event.preventDefault(); // Evitar que el formulario se envíe
-            return;
-        }
-
-        if (!nombre) {
-            alert('Por favor, ingrese el nombre.');
-            event.preventDefault();
-            return;
-        }
-
-        if (!apellido) {
-            alert('Por favor, ingrese el apellido paterno.');
-            event.preventDefault();
-            return;
-        }
-
-        if (!apellido2) {
-            alert('Por favor, ingrese el apellido materno.');
-            event.preventDefault();
-            return;
-        }
-
-        if (!sexo) {
-            alert('Por favor, seleccione el sexo.');
-            event.preventDefault();
-            return;
-        }
-
-        // Validación de teléfono (debe ser numérico)
-        if (telefono && isNaN(telefono)) {
-            alert('El teléfono debe ser un número válido.');
-            event.preventDefault();
-            return;
-        }
-
-        // Validación de fecha de nacimiento
-        if (fechaNacimiento && !isValidDate(fechaNacimiento)) {
-            alert('Por favor, ingrese una fecha de nacimiento válida.');
-            event.preventDefault();
-            return;
-        }
-
-        if (!colonia) {
-            alert('Por favor, seleccione una colonia.');
-            event.preventDefault();
-            return;
-        }
-
-        if (!ubicacion) {
-            alert('Por favor, seleccione una ubicación.');
-            event.preventDefault();
-            return;
-        }
-
-        if (!direccion) {
-            alert('Por favor, ingrese la dirección.');
-            event.preventDefault();
-            return;
-        }
-    });
-
-    // Función para validar si la fecha tiene un formato válido (YYYY-MM-DD)
-    function isValidDate(date) {
-        let regex = /^\d{4}-\d{2}-\d{2}$/;
-        return date.match(regex);
-    }
-</script>
