@@ -325,3 +325,147 @@ session_start();
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
+
+<?php
+// Datos de conexión
+$host = 'localhost';
+$dbname = 'tlalpan';
+$user = 'root';
+$password = '';
+
+// Conexión a la base de datos
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Error al conectar: " . $e->getMessage());
+}
+
+// Verificar si los datos fueron enviados
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Recogemos los datos del formulario, usando valores por defecto si no están definidos
+    $actividad = $_POST['actividad'] ?? '';
+    $nombre = $_POST['nombre'] ?? '';
+    $apellido = $_POST['apellido'] ?? '';
+    $apellido2 = $_POST['apellido2'] ?? '';
+    $sexo = $_POST['sexo'] ?? '';
+    $telefono = $_POST['telefono'] ?? '';
+    $fecha_nacimiento = $_POST['fecha_nacimiento'] ?? '';
+    $colonia = $_POST['colonia'] ?? '';
+    $ubicacion = $_POST['ubicacion'] ?? '';
+    $direccion = $_POST['direccion'] ?? '';
+    $fecha_registro = date("Y-m-d H:i:s"); // Fecha actual
+
+    try {
+        $sql = "INSERT INTO construyendo_salud_en_comunidad 
+            (Actividad, NombreBeneficiario, ApellidoPaterno, ApellidoMaterno, Sexo, Telefono, FechaNacimiento, Colonia, Ubicacion, Direccion, FechaRegistro) 
+        VALUES 
+            (:actividad, :nombre, :apellido, :apellido2, :sexo, :telefono, :fecha_nacimiento, :colonia, :ubicacion, :direccion, :fecha_registro)";
+        
+        // Preparar la consulta y ejecutar con los datos recibidos
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([
+            ':actividad' => $actividad,
+            ':nombre' => $nombre,
+            ':apellido' => $apellido,
+            ':apellido2' => $apellido2,
+            ':sexo' => $sexo,
+            ':telefono' => $telefono,
+            ':fecha_nacimiento' => $fecha_nacimiento,
+            ':colonia' => $colonia,
+            ':ubicacion' => $ubicacion,
+            ':direccion' => $direccion,
+            ':fecha_registro' => $fecha_registro
+        ]);
+        
+        echo "Formulario enviado correctamente.";
+    } catch (PDOException $e) {
+        echo "Error al insertar los datos: " . $e->getMessage();
+    }
+}
+?>
+<script>
+    document.querySelector('.miFormulario').addEventListener('submit', function(event) {
+        // Obtener los valores del formulario
+        let actividad = document.getElementById('actividad').value;
+        let nombre = document.getElementById('nombre').value;
+        let apellido = document.getElementById('apellido').value;
+        let apellido2 = document.getElementById('apellido2').value;
+        let sexo = document.getElementById('sexo').value;
+        let telefono = document.getElementById('telefono').value;
+        let fechaNacimiento = document.getElementById('fecha_nacimiento').value;
+        let colonia = document.getElementById('colonia').value;
+        let ubicacion = document.getElementById('ubicacion').value;
+        let direccion = document.getElementById('direccion').value;
+
+        // Validaciones
+        if (!actividad) {
+            alert('Por favor, seleccione una actividad.');
+            event.preventDefault(); // Evitar que el formulario se envíe
+            return;
+        }
+
+        if (!nombre) {
+            alert('Por favor, ingrese el nombre.');
+            event.preventDefault();
+            return;
+        }
+
+        if (!apellido) {
+            alert('Por favor, ingrese el apellido paterno.');
+            event.preventDefault();
+            return;
+        }
+
+        if (!apellido2) {
+            alert('Por favor, ingrese el apellido materno.');
+            event.preventDefault();
+            return;
+        }
+
+        if (!sexo) {
+            alert('Por favor, seleccione el sexo.');
+            event.preventDefault();
+            return;
+        }
+
+        // Validación de teléfono (debe ser numérico)
+        if (telefono && isNaN(telefono)) {
+            alert('El teléfono debe ser un número válido.');
+            event.preventDefault();
+            return;
+        }
+
+        // Validación de fecha de nacimiento
+        if (fechaNacimiento && !isValidDate(fechaNacimiento)) {
+            alert('Por favor, ingrese una fecha de nacimiento válida.');
+            event.preventDefault();
+            return;
+        }
+
+        if (!colonia) {
+            alert('Por favor, seleccione una colonia.');
+            event.preventDefault();
+            return;
+        }
+
+        if (!ubicacion) {
+            alert('Por favor, seleccione una ubicación.');
+            event.preventDefault();
+            return;
+        }
+
+        if (!direccion) {
+            alert('Por favor, ingrese la dirección.');
+            event.preventDefault();
+            return;
+        }
+    });
+
+    // Función para validar si la fecha tiene un formato válido (YYYY-MM-DD)
+    function isValidDate(date) {
+        let regex = /^\d{4}-\d{2}-\d{2}$/;
+        return date.match(regex);
+    }
+</script>

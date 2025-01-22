@@ -384,3 +384,153 @@ session_start();
 </html>
 
 
+<script>
+    // Esperar a que el DOM esté completamente cargado
+    document.addEventListener("DOMContentLoaded", function () {
+        // Seleccionar el formulario
+        const formulario = document.querySelector(".miFormulario");
+
+        // Añadir evento para manejar el envío del formulario
+        formulario.addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevenir el envío por defecto
+
+            // Validar campos requeridos
+            const dimensionPrograma = document.getElementById("dimension_programa").value.trim();
+            const actividad = document.getElementById("actividad").value.trim();
+            const observacion = document.getElementById("observacion").value.trim();
+            const colec = document.getElementById("colec").value.trim();
+            const acti = document.getElementById("acti").value.trim();
+            const nombre = document.getElementById("nombre").value.trim();
+            const apellido = document.getElementById("apellido").value.trim();
+            const apellido1 = document.getElementById("apellido1").value.trim();
+            const sexo = document.getElementById("sexo").value.trim();
+            const telefono = document.getElementById("telefono").value.trim();
+            const fechaNacimiento = document.getElementById("fecha_nacimiento").value.trim();
+            const colonia = document.getElementById("colonia").value.trim();
+            const ubicacion = document.getElementById("ubicacion").value.trim();
+            const direccion = document.getElementById("direccion").value.trim();
+
+            // Validar que los campos requeridos no estén vacíos
+            if (
+                !dimensionPrograma ||
+                !nombre ||
+                !apellido ||
+                !apellido1 ||
+                !telefono ||
+                !fechaNacimiento ||
+                !direccion
+            ) {
+                alert("Por favor, completa todos los campos requeridos.");
+                return;
+            }
+
+            // Validar formato de fecha
+            const fechaRegex = /^\d{4}-\d{2}-\d{2}$/; // Formato YYYY-MM-DD
+            if (!fechaRegex.test(fechaNacimiento)) {
+                alert("Por favor, ingresa una fecha de nacimiento válida (YYYY-MM-DD).");
+                return;
+            }
+
+            // Validar formato del teléfono (opcional, según tus necesidades)
+            const telefonoRegex = /^\d{10}$/; // Acepta solo números de 10 dígitos
+            if (!telefonoRegex.test(telefono)) {
+                alert("Por favor, ingresa un número de teléfono válido (10 dígitos).");
+                return;
+            }
+
+            // Crear objeto FormData para enviar los datos del formulario
+            const formData = new FormData(formulario);
+
+            // Enviar datos al servidor mediante fetch
+            fetch("form.php", {
+                method: "POST",
+                body: formData,
+            })
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error("Error en la respuesta del servidor.");
+                    }
+                    return response.text(); // Leer la respuesta como texto
+                })
+                .then((data) => {
+                    alert("Formulario enviado correctamente.");
+                    console.log("Respuesta del servidor:", data);
+                    formulario.reset(); // Reiniciar formulario tras éxito
+                })
+                .catch((error) => {
+                    alert("Ocurrió un error al enviar el formulario.");
+                    console.error("Error:", error);
+                });
+        });
+    });
+</script>
+
+
+<?php
+// Datos de conexión
+$host = 'localhost';
+$dbname = 'tlalpan';
+$user = 'root';
+$password = '';
+
+// Conexión a la base de datos
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Error al conectar: " . $e->getMessage());
+}
+
+// Verificar si los datos fueron enviados
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Recogemos los datos del formulario, usando valores por defecto si no están definidos
+    $dimension_programa = $_POST['dimension_programa'] ?? '';
+    $actividad = $_POST['actividad'] ?? '';
+    $observacion = $_POST['observacion'] ?? '';
+    $colec = $_POST['colec'] ?? '';
+    $acti = $_POST['acti'] ?? '';
+    $nombre = $_POST['nombre'] ?? '';
+    $apellido = $_POST['apellido'] ?? '';
+    $apellido1 = $_POST['apellido1'] ?? '';
+    $sexo = $_POST['sexo'] ?? '';
+    $telefono = $_POST['telefono'] ?? '';
+    $fecha_nacimiento = $_POST['fecha_nacimiento'] ?? '';
+    $ubicacion = $_POST['ubicacion'] ?? '';
+    $direccion = $_POST['direccion'] ?? '';
+    $fecha_registro = date("Y-m-d H:i:s"); // Fecha actual
+    
+    // Si no se manda un valor para colonias, se asigna NULL
+    $colonias = $_POST['colonias'] ?? null;
+
+    try {
+        $sql = "INSERT INTO cuidar_y_ser_cuidado_para_el_bienestar_2025 
+            (DimensionPrograma, Actividad, Observacion, Colectivo, Acti, NombreBeneficiario, ApellidoPaterno, ApellidoMaterno, Sexo, Telefono, FechaNacimiento, Ubicacion, Direccion, FechaRegistro, Colonias) 
+        VALUES 
+            (:dimension_programa, :actividad, :observacion, :colec, :acti, :nombre, :apellido, :apellido1, :sexo, :telefono, :fecha_nacimiento, :ubicacion, :direccion, :fecha_registro, :colonias)";
+        
+        // Preparar la consulta y ejecutar con los datos recibidos
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([
+            ':dimension_programa' => $dimension_programa,
+            ':actividad' => $actividad,
+            ':observacion' => $observacion,
+            ':colec' => $colec,
+            ':acti' => $acti,
+            ':nombre' => $nombre,
+            ':apellido' => $apellido,
+            ':apellido1' => $apellido1,
+            ':sexo' => $sexo,
+            ':telefono' => $telefono,
+            ':fecha_nacimiento' => $fecha_nacimiento,
+            ':ubicacion' => $ubicacion,
+            ':direccion' => $direccion,
+            ':fecha_registro' => $fecha_registro,
+            ':colonias' => $colonias  // Pasará NULL si no se recibe un valor
+        ]);
+        
+        echo "Formulario enviado correctamente.";
+    } catch (PDOException $e) {
+        echo "Error al insertar los datos: " . $e->getMessage();
+    }
+}
+?>
