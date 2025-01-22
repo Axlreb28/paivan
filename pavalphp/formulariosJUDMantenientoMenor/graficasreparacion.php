@@ -21,7 +21,7 @@ if ($filtroID) {
     $sql = "
         SELECT ID, Coordenadas, Actividad, Avance, Colonia, Direccion, FechaRegistro 
         FROM mantenimiento_menor 
-        WHERE Tipo = 'Mantenimiento' 
+        WHERE Tipo = 'Reparación' 
         AND ID = $filtroID
     ";
 } else {
@@ -37,7 +37,7 @@ if ($filtroID) {
     $sql = "
         SELECT ID, Coordenadas, Actividad, Avance, Colonia, Direccion, FechaRegistro 
         FROM mantenimiento_menor 
-        WHERE Tipo = 'Mantenimiento' 
+        WHERE Tipo = 'Reparación' 
         AND YEAR(FechaRegistro) = $filtroAnio 
         $periodoQuery
     ";
@@ -84,7 +84,7 @@ if ($filtroPeriodo === 'mensual') {
 $sqlGrafica = "
     SELECT Actividad, COUNT(*) AS Total 
     FROM mantenimiento_menor 
-    WHERE Tipo = 'Mantenimiento' 
+    WHERE Tipo = 'Reparación' 
     AND YEAR(FechaRegistro) = $filtroAnio 
     $graficaQuery
     GROUP BY Actividad
