@@ -6,11 +6,9 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Datos</title>
+    <title>Apoyo para el bienestar 2025</title>
     <link rel="stylesheet" href="../css/formulario.css">
-    <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <!-- Leaflet JavaScript -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> <!-- Font Awesome -->
     <style>
@@ -85,7 +83,7 @@ session_start();
 <body>
     <div class="container">
         <a href="javascript:history.back()" class="back-icon">
-            <i class="fas fa-arrow-left"></i> <!-- Ícono de Font Awesome -->
+            <i class="fas fa-arrow-left"></i> 
         </a>
         <form class="miFormulario" action="">
             <div class="row">
@@ -115,9 +113,9 @@ session_start();
                             <label for="actividad">Actividad:</label>
                             <select id="actividad" name="actividad">
                                 <option value="">--Seleccione una actividad--</option>
-                                <option value="actividad1">Sistematización</option>
-                                <option value="actividad2">Capacitación</option>
-                                <option value="actividad3">Evaluación</option>
+                                <option value="sistematizacion">Sistematización</option>
+                                <option value="capacitacion">Capacitación</option>
+                                <option value="evaluacion">Evaluación</option>
                             </select>
                         </div>
                     </div>
@@ -138,12 +136,12 @@ session_start();
                         <input type="text" id="nombre" name="nombre" required>
                     </div>
                     <div class="form-group">
-                        <label for="apellido">Apellido paterno:</label>
-                        <input type="text" id="apellido" name="apellido" required>
+                        <label for="apellidop">Apellido paterno:</label>
+                        <input type="text" id="apellidop" name="apellidop" required>
                     </div>
                     <div class="form-group">
-                        <label for="apellido1">Apellido materno:</label>
-                        <input type="text" id="apellido1" name="apellido1" required>
+                        <label for="apellidom">Apellido materno:</label>
+                        <input type="text" id="apellidom" name="apellidom" required>
                     </div>
                     <div class="form-group">
                         <label for="sexo">Sexo:</label>
@@ -155,7 +153,7 @@ session_start();
                     </div>
                     <div class="form-group">
                         <label for="telefono">Teléfono:</label>
-                        <input type="text" id="telefono" name="telefono">
+                        <input type="tel" id="telefono" name="telefono" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890">
                     </div>
                     <div class="form-group">
                         <label for="fecha_nacimiento">Fecha de nacimiento:</label>
@@ -358,7 +356,6 @@ session_start();
                         <input type="text" id="direccion" name="direccion" readonly>
                     </div>
                     <button type="submit" class="btn">Enviar</button>
-                    <input type="button" value="Página anterior" onClick="history.go(-1);" class="btn2">
                 </div>
             </div>
         </form>

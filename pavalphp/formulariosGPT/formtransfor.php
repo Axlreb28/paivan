@@ -83,7 +83,7 @@ session_start();
     <?php if (isset($_SESSION['departamento'])): ?>
     <div class="container">
         <a href="javascript:history.back()" class="back-icon">
-            <i class="fas fa-arrow-left"></i> <!-- Ícono de Font Awesome -->
+            <i class="fas fa-arrow-left"></i> 
         </a>
         <form class="miFormulario" action="">
             <div class="row">
@@ -159,7 +159,7 @@ session_start();
                     </div>
                     <div class="form-group">
                         <label for="telefono">Teléfono:</label>
-                        <input type="text" id="telefono" name="telefono">
+                        <input type="tel" id="telefono" name="telefono" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890">
                     </div>
                     <div class="form-group">
                         <label for="fecha_nacimiento">Fecha de nacimiento:</label>

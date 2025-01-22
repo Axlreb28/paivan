@@ -7,7 +7,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Datos</title>
+    <title>Cuidar y ser cuidado para el bienestar 2025</title>
     <link rel="stylesheet" href="../css/formulario.css">
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
@@ -87,7 +87,7 @@ session_start();
 <body>
     <div class="container">
         <a href="javascript:history.back()" class="back-icon">
-            <i class="fas fa-arrow-left"></i> <!-- Ícono de Font Awesome -->
+            <i class="fas fa-arrow-left"></i> 
         </a>
         <form class="miFormulario" action="procesar_formulario.php" method="POST">
             <div class="row">
@@ -375,7 +375,6 @@ session_start();
                         <input type="text" id="direccion" name="direccion" readonly>
                     </div>
                     <button type="submit" class="btn">Enviar</button>
-                    <input type="button" value="Página anterior" onClick="history.go(-1);" class="btn2">
                 </div>
             </div>
         </form>
@@ -456,7 +455,9 @@ session_start();
                     alert("Formulario enviado correctamente.");
                     console.log("Respuesta del servidor:", data);
                     formulario.reset(); // Reiniciar formulario tras éxito
+                    window.location.href = "menuDireccionGPT.php"; // Redirigir a menuDireccionGPT.php
                 })
+                
                 .catch((error) => {
                     alert("Ocurrió un error al enviar el formulario.");
                     console.error("Error:", error);
@@ -468,10 +469,10 @@ session_start();
 
 <?php
 // Datos de conexión
-$host = 'indicadorestlalpan.mx';
-$dbname = 'tlalpandb';
-$user = 'tlalpan';
-$password = 'o3NvcMy5#8Nhrco%';
+$host = 'localhost';
+$dbname = 'tlalpan';
+$user = 'root';
+$password = '';
 
 // Conexión a la base de datos
 try {
