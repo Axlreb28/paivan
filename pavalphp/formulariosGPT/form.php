@@ -466,6 +466,8 @@ session_start();
 </script>
 
 
+
+
 <?php
 // Datos de conexión
 $host = 'indicadorestlalpan.mx';
@@ -473,8 +475,8 @@ $dbname = 'tlalpandb';
 $user = 'tlalpan';
 $password = 'o3NvcMy5#8Nhrco%';
 
-// Conexión a la base de datos
 try {
+    // Crear conexión PDO
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
@@ -483,7 +485,7 @@ try {
 
 // Verificar si los datos fueron enviados
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Recogemos los datos del formulario, usando valores por defecto si no están definidos
+    // Recoger datos del formulario
     $dimension_programa = $_POST['dimension_programa'] ?? '';
     $actividad = $_POST['actividad'] ?? '';
     $observacion = $_POST['observacion'] ?? '';
@@ -497,18 +499,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $fecha_nacimiento = $_POST['fecha_nacimiento'] ?? '';
     $ubicacion = $_POST['ubicacion'] ?? '';
     $direccion = $_POST['direccion'] ?? '';
-    $fecha_registro = date("Y-m-d H:i:s"); // Fecha actual
-    
-    // Si no se manda un valor para colonias, se asigna NULL
+    $fecha_registro = date("Y-m-d H:i:s");
+
+    // Validar campo Colonias
     $colonias = $_POST['colonias'] ?? null;
 
+    // Verificar si la colonia existe en la tabla `colonias`
+    try {
+        if ($colonias !== null) {
+            $stmt = $pdo->prepare("SELECT COUNT(*) FROM colonias WHERE ID = :colonias");
+            $stmt->execute([':colonias' => $colonias]);
+            $exists = $stmt->fetchColumn();
+
+            // Si no existe, asignar NULL
+            if (!$exists) {
+                $colonias = null;
+            }
+        }
+    } catch (PDOException $e) {
+        die("Error al validar la colonia: " . $e->getMessage());
+    }
+
+    // Insertar los datos en la tabla
     try {
         $sql = "INSERT INTO cuidar_y_ser_cuidado_para_el_bienestar_2025 
             (DimensionPrograma, Actividad, Observacion, Colectivo, Acti, NombreBeneficiario, ApellidoPaterno, ApellidoMaterno, Sexo, Telefono, FechaNacimiento, Ubicacion, Direccion, FechaRegistro, Colonias) 
         VALUES 
             (:dimension_programa, :actividad, :observacion, :colec, :acti, :nombre, :apellido, :apellido1, :sexo, :telefono, :fecha_nacimiento, :ubicacion, :direccion, :fecha_registro, :colonias)";
-        
-        // Preparar la consulta y ejecutar con los datos recibidos
+
         $stmt = $pdo->prepare($sql);
         $stmt->execute([
             ':dimension_programa' => $dimension_programa,
@@ -525,9 +543,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ':ubicacion' => $ubicacion,
             ':direccion' => $direccion,
             ':fecha_registro' => $fecha_registro,
-            ':colonias' => $colonias  // Pasará NULL si no se recibe un valor
+            ':colonias' => $colonias  // Si no es válida, será NULL
         ]);
-        
+
         echo "Formulario enviado correctamente.";
     } catch (PDOException $e) {
         echo "Error al insertar los datos: " . $e->getMessage();
