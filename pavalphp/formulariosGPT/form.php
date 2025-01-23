@@ -419,7 +419,7 @@ session_start();
                 !fechaNacimiento ||
                 !direccion
             ) {
-                alert("Por favor, completa todos los campos requeridos.");
+                alert("Por favor, completa todos los campos requeridos");
                 return;
             }
 
