@@ -42,7 +42,7 @@ $conn->close();
 <body>
     <?php include 'includes/navbarh.php'; ?>
     <div id="formContent">
-        <h2 class="centro">Departamentos</h2>
+        <h2 class="centro">Unidad departamental</h2>
         
         <!-- Barra de búsqueda -->
         <div id="searchBar" class="mb-3" style="display: none;">
