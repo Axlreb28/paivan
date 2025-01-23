@@ -78,7 +78,7 @@
 
             <!-- Campo de número de contrato -->
             <div class="form-group">
-                <label for="contrato">Número de contrato/licencia de funcionamiento:</label>
+                <label for="contrato">Número de contrato:</label>
                 <input type="number" id="contrato" name="contrato">
             </div>
 
@@ -118,8 +118,21 @@
             <button type="submit" class="btn">Enviar</button>
         </div>
     </div>
-</form>
+    </form>
+</div>
+    <div class="obrascontainer">
+        <form>
+            <br>
+            <div style="text-align: center;">
+                <h3>Consulta las gráficas</h3> <br>
+                <p>Consulta las gráficas de los datos ingresados en el formulario</p><br>
+                <a href="utopia_graficas.php" class="btn">Consultar los datos de Utopia</a>
+                <a href="escuela_graficas.php" class="btn">Consultar los datos de Escuela</a>
+                <a href="deportivo_graficas.php" class="btn">Consultar los datos de Deportivo</a>
+            </div>
+        </form>
     </div>
+
     <?php else : ?>
     <p>Por favor inicie sesión primero.</p>
     <?php endif; ?>
