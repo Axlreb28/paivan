@@ -21,9 +21,9 @@ $_SESSION['departamento'] = 'NombreDelDepartamento';
         <h2 class="centro"> Programas sociales</h2>
         <div class="menu-grid">
             <a class="menu-item" href="../formulariosDireccionSalud/formConstruyendosalud.php">Construyendo salud en comunidad</a>
-            <a class="menu-item" href="../formulariosDireccionSalud/formSaludconstruye.php">La salud se construye desde casa</a>
-            <a class="menu-item" href="../formulariosDireccionSalud/formSaludable-mente.php">Saludable-mente</a>
-            <a class="menu-item" href="../formulariosDireccionSalud/formTransformamoscomunidades.php">Transformamos comunidades incluyentes</a>
+            <a class="menu-item" href="../formulariosDireccionSalud/formConstruyendosalud.php">La salud se construye desde casa</a>
+            <a class="menu-item" href="../formulariosDireccionSalud/formConstruyendosalud.php">Saludable-mente</a>
+            <a class="menu-item" href="../formulariosDireccionSalud/formConstruyendosalud.php">Transformamos comunidades incluyentes</a>
         </div>
     </div>
 
