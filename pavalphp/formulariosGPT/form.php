@@ -4,6 +4,7 @@ session_start();
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,7 +30,10 @@ session_start();
 
         function initMap() {
             // Coordenadas de Tlalpan, Ciudad de México
-            const tlalpanCoords = { lat: 19.287860, lng: -99.171360 };
+            const tlalpanCoords = {
+                lat: 19.287860,
+                lng: -99.171360
+            };
             map = L.map('map').setView([tlalpanCoords.lat, tlalpanCoords.lng], 13);
 
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -37,7 +41,9 @@ session_start();
             }).addTo(map);
 
             // Crear un marcador inicial y permitir que el usuario lo arrastre
-            marker = L.marker([tlalpanCoords.lat, tlalpanCoords.lng], {draggable: true}).addTo(map);
+            marker = L.marker([tlalpanCoords.lat, tlalpanCoords.lng], {
+                draggable: true
+            }).addTo(map);
 
             marker.on('dragend', function(event) {
                 const position = marker.getLatLng();
@@ -68,7 +74,7 @@ session_start();
             }
         }
 
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('map-container').style.display = 'none';
         });
 
@@ -84,6 +90,7 @@ session_start();
         });
     </script>
 </head>
+
 <body>
     <div class="container">
         <a href="javascript:history.back()" class="back-icon">
@@ -92,7 +99,7 @@ session_start();
         <form class="miFormulario" action="procesar_formulario.php" method="POST">
             <div class="row">
                 <div class="column">
-                    <h3 class="titles">Cuidar y ser cuidado para el bienestar 2025</h3>
+                    <h3 class="titles">Cuidar y ser cuidado para el bienestar 20025</h3>
                     <div class="form-group">
                         <label for="dimension_programa">Dimensión del Programa:</label>
                         <select id="dimension_programa" name="dimension_programa">
@@ -358,7 +365,7 @@ session_start();
                                 <option value="DIAMANTE">DIAMANTE</option>
                                 <option value="FOVISSSTE SAN PEDRO MARTIR (U HAB)">FOVISSSTE SAN PEDRO MARTIR (U HAB)</option>
                                 <option value="SAN NICOLAS II">SAN NICOLAS II</option>
-                                <option value="SOLIDARIDAD">SOLIDARIDAD</option>                                
+                                <option value="SOLIDARIDAD">SOLIDARIDAD</option>
                             </select>
                         </div>
                     </div>
@@ -381,17 +388,18 @@ session_start();
         </form>
     </div>
 </body>
+
 </html>
 
 
 <script>
     // Esperar a que el DOM esté completamente cargado
-    document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function() {
         // Seleccionar el formulario
         const formulario = document.querySelector(".miFormulario");
 
         // Añadir evento para manejar el envío del formulario
-        formulario.addEventListener("submit", function (event) {
+        formulario.addEventListener("submit", function(event) {
             event.preventDefault(); // Prevenir el envío por defecto
 
             // Validar campos requeridos
@@ -443,9 +451,9 @@ session_start();
 
             // Enviar datos al servidor mediante fetch
             fetch("form.php", {
-                method: "POST",
-                body: formData,
-            })
+                    method: "POST",
+                    body: formData,
+                })
                 .then((response) => {
                     if (!response.ok) {
                         throw new Error("Error en la respuesta del servidor.");
@@ -498,7 +506,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $ubicacion = $_POST['ubicacion'] ?? '';
     $direccion = $_POST['direccion'] ?? '';
     $fecha_registro = date("Y-m-d H:i:s"); // Fecha actual
-    
+
     // Si no se manda un valor para colonias, se asigna NULL
     $colonias = $_POST['colonias'] ?? null;
 
@@ -507,7 +515,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             (DimensionPrograma, Actividad, Observacion, Colectivo, Acti, NombreBeneficiario, ApellidoPaterno, ApellidoMaterno, Sexo, Telefono, FechaNacimiento, Ubicacion, Direccion, FechaRegistro, Colonias) 
         VALUES 
             (:dimension_programa, :actividad, :observacion, :colec, :acti, :nombre, :apellido, :apellido1, :sexo, :telefono, :fecha_nacimiento, :ubicacion, :direccion, :fecha_registro, :colonias)";
-        
+
         // Preparar la consulta y ejecutar con los datos recibidos
         $stmt = $pdo->prepare($sql);
         $stmt->execute([
@@ -527,7 +535,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ':fecha_registro' => $fecha_registro,
             ':colonias' => $colonias  // Pasará NULL si no se recibe un valor
         ]);
-        
+
         echo "Formulario enviado correctamente.";
     } catch (PDOException $e) {
         echo "Error al insertar los datos: " . $e->getMessage();
