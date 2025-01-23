@@ -1,23 +1,16 @@
 /* Añadir Bootstrap CSS */ 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
-.container {
+.obrascontainer {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 50vh;
     background-color: #c24040;
     overflow: hidden; /* Evita que los elementos desborden el contenedor */
 }
 
-.container form {
+.obrascontainer form {
     width: 100%;
     max-width: 600px; /* Ajusta el valor máximo */
     padding: 60px;
@@ -117,4 +110,12 @@ form .btn:hover {
     margin-top: 10px;
     border-radius: 6px; /* Añadir borde redondeado */
     overflow: hidden; /* Para evitar desbordamientos */
+}
+
+
+.titulo-mapa {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
 }

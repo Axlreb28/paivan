@@ -1,6 +1,6 @@
 /* Estilo general para el contenedor principal */
 #formContent {
-    padding: 40px;
+    padding: 30px;
     text-align: center;
     width: 100%;
     max-width: 800px;
@@ -19,7 +19,7 @@
     transform: translate(-50%, -50%); /* Centra el contenedor */
 }
 
-body { background-color: #bf3131; /* Fondo rojo */}
+.body { background-color: #bf3131; /* Fondo rojo */}
 /* Estilo para el título */
 #formContent h2.centro {
     font-size: 40px;

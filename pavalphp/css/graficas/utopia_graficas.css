@@ -1,0 +1,98 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FDF3F3;
+}
+
+/* Header */
+header {
+    background-color: #c24040;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    font-size: 1.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #8B0000;
+}
+
+/* Footer */
+footer {
+    background-color: #c24040;
+    height: 50px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    border-top: 2px solid #8B0000;
+}
+
+/* Chart Containers */
+.chart-container {
+    border: 2px solid #D8C6B8;
+    border-radius: 10px;
+    background-color: #FDF3F3;
+    margin: 20px auto;
+    padding: 15px;
+    max-width: 95%;
+    overflow-x: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chart-container h2 {
+    margin-bottom: 10px;
+    color: #8B0000;
+}
+
+.chart-container p {
+    font-style: italic;
+    margin-top: 10px;
+    color: #D32F2F;
+}
+
+/* Scrollbars for charts */
+.chart-container canvas {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Form */
+form {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+form label {
+    font-weight: bold;
+    color: #8B0000;
+}
+
+form select, form button {
+    border-radius: 5px;
+    padding: 5px 10px;
+    border: 1px solid #D32F2F;
+    background-color: white;
+    color: #000000;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
