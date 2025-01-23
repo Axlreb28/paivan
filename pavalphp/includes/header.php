@@ -20,16 +20,18 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item"><a class="nav-link" href="../menudepartamento.php">Departamentos</a></li>
-                <li class="nav-item"><a class="nav-link" href="../configuracion.php">Configuración</a></li>
+                <?php
+                if(isset($_SESSION['nombre_usuario'])) {
+                    echo '<li class="nav-item"><a class="nav-link">Hola, ' . htmlspecialchars($_SESSION['nombre_usuario'], ENT_QUOTES, 'UTF-8') . '</a></li>';
+                }
+                ?>
             </ul>
             <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="../menudepartamento.php">Departamentos</a></li>
+                <li class="nav-item"><a class="nav-link" href="../configuracion.php">Configuración</a></li>
                 <?php
                 if(isset($_SESSION['nombre_usuario'])) {
                     echo '
-                    <li class="nav-item">
-                        <a class="nav-link">Hola, ' . htmlspecialchars($_SESSION['nombre_usuario'], ENT_QUOTES, 'UTF-8') . '</a>
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../logout.php">
                             <i class="fas fa-sign-out-alt"></i>
