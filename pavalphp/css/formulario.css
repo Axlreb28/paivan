@@ -12,7 +12,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 40vh;
     background-color: #c24040;
     overflow: hidden; /* Evita que los elementos desborden el contenedor */ 
 }
